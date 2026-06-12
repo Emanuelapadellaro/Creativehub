@@ -1,0 +1,15 @@
+# Source / reference files — not needed to serve the site
+CLAUDE.md
+COPY WEBSITE.pdf
+Brand Conexión Coyote.pdf
+GALANTA___.pdf
+remove.png
+to adust.png
+www.emanuelacreativehub.com_*.png
+creativeHub-18.jpg
+
+# Old reference screenshots
+Screenshot 2026-06-11 at 11.*.png
+
+# macOS
+.DS_Store

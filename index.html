@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Creative Hub — Brand Identity &amp; Web Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+
+    /* ── RESET ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOKENS ────────────────────────────────────── */
+    :root {
+      --ink:    #0b0b09;
+      --paper:  #f4f3ef;
+      --stone:  #e8e7e2;
+      --dust:   #cdccc6;
+      --dim:    rgba(11,11,9,0.07);
+      --serif:  'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --sans:   'Montserrat', system-ui, -apple-system, sans-serif;
+      --ease:   cubic-bezier(.4,0,.2,1);
+      --nav-h:  64px;
+      --gx:     clamp(24px, 5vw, 80px);
+      --gy:     clamp(72px, 9vw, 130px);
+    }
+
+    /* ── BASE ──────────────────────────────────────── */
+    body {
+      font-family: var(--serif);
+      font-weight: 300;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVIGATION ────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--gx);
+      background: var(--paper);
+      border-bottom: 1px solid var(--dim);
+    }
+
+    .nav__logo img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: var(--paper);
+    }
+
+    .nav__mid {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav__link {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--ink);
+      transition: opacity .2s var(--ease);
+    }
+    .nav__link:hover { opacity: .65; }
+
+    .nav__cta {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      padding: 10px 20px;
+      white-space: nowrap;
+      transition: background .2s var(--ease), color .2s var(--ease);
+    }
+    .nav__cta:hover { background: var(--ink); color: var(--paper); }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('IMG_2156.JPG');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.04);
+      animation: hero-zoom 12s ease-out forwards;
+    }
+    @keyframes hero-zoom {
+      from { transform: scale(1.04); }
+      to   { transform: scale(1); }
+    }
+
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(11,11,9,.72) 0%,
+        rgba(11,11,9,.82) 50%,
+        rgba(11,11,9,.75) 100%);
+    }
+
+    /* animated frame */
+    .hero__frame {
+      position: absolute;
+      inset: 48px;
+      pointer-events: none;
+    }
+    .hero__frame .f-top,
+    .hero__frame .f-bottom {
+      position: absolute; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,.2);
+      transform: scaleX(0);
+    }
+    .hero__frame .f-top    { top: 0;    transform-origin: left center;  animation: scale-h 1.2s var(--ease) .4s forwards; }
+    .hero__frame .f-bottom { bottom: 0; transform-origin: right center; animation: scale-h 1.2s var(--ease) .4s forwards; }
+    .hero__frame .f-left,
+    .hero__frame .f-right {
+      position: absolute; top: 0; bottom: 0;
+      width: 1px;
+      background: rgba(255,255,255,.2);
+      transform: scaleY(0);
+    }
+    .hero__frame .f-left  { left: 0;  transform-origin: center top;    animation: scale-v 1s var(--ease) 1.4s forwards; }
+    .hero__frame .f-right { right: 0; transform-origin: center bottom; animation: scale-v 1s var(--ease) 1.4s forwards; }
+
+    @keyframes scale-h { to { transform: scaleX(1); } }
+    @keyframes scale-v { to { transform: scaleY(1); } }
+
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--gx);
+    }
+
+    .hero__h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(38px, 6vw, 88px);
+      line-height: 1.06;
+      letter-spacing: -.01em;
+      color: var(--paper);
+    }
+    .hero__h1 em { font-style: italic; }
+
+    /* word-by-word entrance */
+    .hero__word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: word-rise 1s cubic-bezier(.22,1,.36,1) calc(.3s + var(--d) * .65s) forwards;
+    }
+    @keyframes word-rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* "meaningful" reveal */
+    .word-reveal {
+      display: inline-block;
+      clip-path: inset(0 0 110% 0);
+      transition: clip-path 0s;
+    }
+    .cli__head.in .word-reveal {
+      clip-path: inset(0 0 0% 0);
+      transition: clip-path 1.1s cubic-bezier(.22,1,.36,1) .65s;
+    }
+
+    /* ── HERO INTRO ─────────────────────────────────── */
+    .hero-intro {
+      background: var(--paper);
+      padding: clamp(56px,8vw,112px) var(--gx);
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .hero-intro__label {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      color: rgba(11,11,9,.3);
+      padding-top: 8px;
+    }
+
+    .hero-intro__text {
+      font-size: clamp(17px, 1.7vw, 22px);
+      font-weight: 300;
+      line-height: 1.72;
+      color: var(--ink);
+      max-width: 600px;
+      margin-bottom: 44px;
+    }
+
+    /* ── BUTTONS ───────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      transition: gap .22s var(--ease);
+    }
+    .btn:hover { gap: 22px; }
+
+    .btn--ghost-lt {
+      color: var(--paper);
+      border: 1px solid rgba(244,243,239,.22);
+      padding: 14px 28px;
+      transition: border-color .22s var(--ease), gap .22s var(--ease);
+    }
+    .btn--ghost-lt:hover { border-color: var(--paper); }
+
+    .btn--solid-lt {
+      color: var(--ink);
+      background: var(--paper);
+      padding: 14px 28px;
+      transition: background .2s var(--ease), gap .22s var(--ease);
+    }
+    .btn--solid-lt:hover { background: var(--stone); }
+
+    .btn--outline-dk {
+      color: var(--ink);
+      border: 1px solid rgba(11,11,9,.28);
+      padding: 14px 28px;
+      transition: border-color .22s var(--ease), gap .22s var(--ease);
+    }
+    .btn--outline-dk:hover { border-color: var(--ink); }
+
+    /* ── TICKER ────────────────────────────────────── */
+    .ticker {
+      overflow: hidden;
+      background: var(--ink);
+      border-top: 1px solid rgba(244,243,239,.06);
+      border-bottom: 1px solid rgba(244,243,239,.06);
+      padding: 18px 0;
+    }
+    .ticker__track {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll-left 28s linear infinite;
+    }
+    .ticker__word {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 300;
+      letter-spacing: .30em;
+      text-transform: uppercase;
+      color: rgba(244,243,239,.2);
+      padding: 0 40px;
+      flex-shrink: 0;
+    }
+    .ticker__dot {
+      font-size: 5px;
+      color: rgba(244,243,239,.1);
+      align-self: center;
+      flex-shrink: 0;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ──────────────────────────────────── */
+    .s      { padding: var(--gy) var(--gx); }
+    .s--dk  { background: var(--ink);   color: var(--paper); }
+    .s--lt  { background: var(--paper); color: var(--ink);   }
+    .s--st  { background: var(--stone); color: var(--ink);   }
+
+    .s__eye {
+      display: block;
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: .26em;
+      text-transform: uppercase;
+      margin-bottom: 64px;
+    }
+
+    .s__h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(30px, 4vw, 56px);
+      line-height: 1.1;
+    }
+    .s__h2 em { font-style: italic; }
+
+    /* ── PHILOSOPHY ────────────────────────────────── */
+    .philo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .philo__quote {
+      font-size: clamp(20px, 2.5vw, 38px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.28;
+      color: var(--paper);
+      padding-right: 64px;
+      border-right: 1px solid rgba(244,243,239,.1);
+    }
+    .philo__body {
+      font-size: clamp(15px, 1.35vw, 18px);
+      font-weight: 300;
+      line-height: 1.82;
+      color: var(--paper);
+      padding-left: 64px;
+      padding-top: 4px;
+    }
+
+    /* ── SERVICES ──────────────────────────────────── */
+    .svc__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .svc__intro {
+      font-size: clamp(15px, 1.35vw, 18px);
+      font-weight: 300;
+      line-height: 1.78;
+      color: var(--ink);
+    }
+    .svc__grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      border-top: 1px solid var(--dim);
+    }
+    .svc__item {
+      padding: 48px 0;
+      border-right: 1px solid var(--dim);
+      display: flex;
+      flex-direction: column;
+    }
+    .svc__item:first-child              { padding-right: 44px; }
+    .svc__item:not(:first-child)        { padding-left: 44px; }
+    .svc__item:last-child               { border-right: none; }
+
+    .svc__num {
+      display: block;
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: .2em;
+      color: var(--ink);
+      margin-bottom: 28px;
+    }
+    .svc__name {
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .svc__desc {
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink);
+      flex: 1;
+    }
+
+    /* small service image */
+    .svc__img {
+      margin-top: 28px;
+      overflow: hidden;
+    }
+    .svc__img img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(25%);
+      transition: transform .6s var(--ease), filter .4s var(--ease);
+    }
+    .svc__item:hover .svc__img img {
+      transform: scale(1.04);
+      filter: grayscale(0%);
+    }
+
+    /* ── TEAM ──────────────────────────────────────── */
+    .team__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .team__sub {
+      font-size: clamp(15px, 1.35vw, 18px);
+      font-weight: 300;
+      line-height: 1.78;
+      color: var(--ink);
+    }
+    .team__grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 40px;
+    }
+
+    .tc__img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: var(--dust);
+      margin-bottom: 22px;
+    }
+    .tc__img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(100%);
+      transition: transform .6s var(--ease), filter .6s var(--ease);
+    }
+    .tc:hover .tc__img img { transform: scale(1.04); filter: grayscale(35%); }
+
+    .tc__role {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+    .tc__name {
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+    .tc__bio {
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.78;
+      color: var(--ink);
+    }
+
+    /* ── CLIENTS ───────────────────────────────────── */
+    .cli__head {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .cli__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top:  1px solid rgba(244,243,239,.18);
+      border-left: 1px solid rgba(244,243,239,.18);
+    }
+    .cli__cell {
+      border-right:  1px solid rgba(244,243,239,.18);
+      border-bottom: 1px solid rgba(244,243,239,.18);
+      padding: 64px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-align: center;
+      transition: background .3s var(--ease);
+      cursor: default;
+    }
+    .cli__cell:hover { background: rgba(244,243,239,.04); }
+    .cli__cell-num {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: .22em;
+      color: rgba(244,243,239,.35);
+    }
+    .cli__cell-name {
+      font-family: var(--serif);
+      font-size: clamp(16px, 1.6vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--paper);
+      line-height: 1.3;
+    }
+
+    /* ── CTA ───────────────────────────────────────── */
+    .cta {
+      padding: clamp(80px,12vw,160px) var(--gx);
+      background: var(--ink);
+      text-align: center;
+    }
+    .cta__eye {
+      display: block;
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--paper);
+      margin-bottom: 44px;
+    }
+    .cta__h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(32px, 4.5vw, 66px);
+      line-height: 1.1;
+      color: var(--paper);
+      max-width: 680px;
+      margin: 0 auto 28px;
+    }
+    .cta__h2 em { font-style: italic; }
+    .cta__sub {
+      font-size: clamp(14px,1.25vw,17px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--paper);
+      white-space: nowrap;
+      margin: 0 auto 52px;
+    }
+    .cta__btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(244,243,239,.06);
+      padding: 36px var(--gx);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .ft__logo img {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: var(--paper);
+    }
+    .ft__links { display: flex; gap: 32px; }
+    .ft__link {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--paper);
+      transition: opacity .2s var(--ease);
+    }
+    .ft__link:hover { opacity: .65; }
+    .ft__copy {
+      font-family: var(--sans);
+      font-size: 9px;
+      letter-spacing: .1em;
+      color: var(--paper);
+    }
+
+    /* ── REVEAL ────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal[data-d="1"] { transition-delay: .12s; }
+    .reveal[data-d="2"] { transition-delay: .24s; }
+    .reveal[data-d="3"] { transition-delay: .36s; }
+
+    /* ════════════════════════════════════════════════
+       RESPONSIVE — TABLET  ≤ 900px
+    ═════════════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      /* hero */
+      .hero__frame { inset: 28px; }
+
+      /* hero intro */
+      .hero-intro { grid-template-columns: 1fr; gap: 28px; }
+      .hero-intro__label { display: none; }
+
+      /* philosophy */
+      .philo { grid-template-columns: 1fr; gap: 40px; }
+      .philo__quote { padding-right: 0; border-right: none; padding-bottom: 40px; border-bottom: 1px solid rgba(244,243,239,.1); }
+      .philo__body  { padding-left: 0; }
+
+      /* services — 2-col, 3rd card spans full width */
+      .svc__top { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
+      .svc__grid { grid-template-columns: 1fr 1fr; }
+      .svc__item:first-child       { padding-right: 32px; }
+      .svc__item:nth-child(2)      { padding-left: 32px; border-right: none; }
+      .svc__item:last-child        { grid-column: 1 / -1; border-right: none; padding-left: 0; padding-right: 0; border-top: 1px solid var(--dim); }
+
+      /* team — 2-col, 3rd card spans full width */
+      .team__top  { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
+      .team__grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .team__grid .tc:last-child { grid-column: 1 / -1; max-width: 50%; }
+
+      /* clients */
+      .cli__grid { grid-template-columns: 1fr 1fr; }
+
+      /* cta sub */
+      .cta__sub { white-space: normal; max-width: 560px; }
+    }
+
+    /* ════════════════════════════════════════════════
+       RESPONSIVE — MOBILE  ≤ 600px
+    ═════════════════════════════════════════════════ */
+    @media (max-width: 600px) {
+      :root { --gx: 18px; --gy: 52px; }
+
+      /* nav */
+      .nav__mid { display: none; }
+      .nav__cta { padding: 9px 14px; font-size: 8px; }
+      .nav__logo img { width: 36px; height: 36px; }
+
+      /* hero */
+      .hero__frame { inset: 14px; }
+      .hero__h1 { font-size: clamp(28px, 8vw, 52px); }
+
+      /* hero intro */
+      .hero-intro__text { font-size: 16px; }
+      .btn { font-size: 9px; }
+
+      /* philosophy */
+      .philo__quote { font-size: clamp(18px, 5vw, 30px); }
+
+      /* services */
+      .svc__grid { grid-template-columns: 1fr; border-top: none; }
+      .svc__item {
+        grid-column: auto !important;
+        border-right: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 36px;
+        padding-bottom: 36px;
+        border-top: 1px solid var(--dim);
+      }
+      .svc__item:last-child { border-bottom: 1px solid var(--dim); }
+      .svc__img img { height: 130px; }
+
+      /* team */
+      .team__grid .tc:last-child { grid-column: auto; max-width: 100%; }
+      .team__grid { grid-template-columns: 1fr; gap: 40px; }
+      .tc__img { aspect-ratio: 3/4; }
+
+      /* clients */
+      .cli__head { text-align: left; }
+      .cli__grid { grid-template-columns: 1fr; }
+      .cli__cell { padding: 32px 20px; }
+      .cli__cell-name { font-size: 18px; }
+
+      /* cta */
+      .cta__h2  { font-size: clamp(26px, 7vw, 52px); }
+      .cta__sub { white-space: normal; max-width: 100%; }
+      .cta__btns { flex-direction: column; align-items: center; }
+
+      /* footer */
+      footer { flex-direction: column; align-items: flex-start; gap: 18px; }
+      .ft__links { gap: 18px; flex-wrap: wrap; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVIGATION ───────────────────────────────── -->
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="creative.png" alt="Creative Hub">
+    </a>
+    <div class="nav__mid">
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+    </div>
+    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
+  </nav>
+
+
+  <!-- ── HERO ─────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__frame">
+      <span class="f-top"></span>
+      <span class="f-bottom"></span>
+      <span class="f-left"></span>
+      <span class="f-right"></span>
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__h1">
+        <span class="hero__word" style="--d:0">Brands</span>
+        <span class="hero__word" style="--d:1">and</span>
+        <span class="hero__word" style="--d:2">websites</span><br>
+        <span class="hero__word" style="--d:3">that</span>
+        <span class="hero__word" style="--d:4">feel</span>
+        <span class="hero__word" style="--d:5"><em>unmistakably</em></span><br>
+        <span class="hero__word" style="--d:6">yours.</span>
+      </h1>
+    </div>
+  </section>
+
+
+  <!-- ── HERO INTRO ───────────────────────────────── -->
+  <section class="hero-intro">
+    <span class="hero-intro__label">The Creative Hub</span>
+    <div>
+      <p class="hero-intro__text reveal">
+        Your brand is more than a look. It's an essence. We help founders, creators, and visionary businesses uncover what makes them truly distinct — and translate it into a digital presence that feels authentic, memorable, and deeply aligned.
+      </p>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--outline-dk reveal">
+        Start your project <span>→</span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ── TICKER ───────────────────────────────────── -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker__track">
+      <span class="ticker__word">Brand Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Web Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Communication Strategy</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Photography</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Editorial Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Brand Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Web Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Communication Strategy</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Photography</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Editorial Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
+    </div>
+  </div>
+
+
+  <!-- ── PHILOSOPHY ───────────────────────────────── -->
+  <section class="s s--dk">
+    <span class="s__eye">01 — Philosophy</span>
+    <div class="philo reveal">
+      <blockquote class="philo__quote">
+        "The most effective brands are not built by following trends. They are built by expressing something <em>genuine.</em>"
+      </blockquote>
+      <p class="philo__body">
+        Our role is to help bring that essence into form — through thoughtful design, clear messaging, and a cohesive digital experience that reflects the depth and vision behind your work.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ── SERVICES ─────────────────────────────────── -->
+  <section class="s s--lt">
+    <span class="s__eye">02 — Services</span>
+    <div class="svc__top reveal">
+      <h2 class="s__h2">A curated suite<br>of creative<br><em>services.</em></h2>
+      <p class="svc__intro">Each one designed to work together — or stand alone. Whatever the scope, the process is always deeply intentional.</p>
+    </div>
+    <div class="svc__grid reveal">
+
+      <div class="svc__item">
+        <span class="svc__num">01</span>
+        <h3 class="svc__name">Brand Identity</h3>
+        <p class="svc__desc">Positioning, naming, visual identity, and messaging that expresses who you truly are.</p>
+        <div class="svc__img">
+          <img src="DTS_OBJECTS_Daniel_Farò_Photos_ID7368.jpg" alt="Brand Identity">
+        </div>
+      </div>
+
+      <div class="svc__item">
+        <span class="svc__num">02</span>
+        <h3 class="svc__name">Website Design</h3>
+        <p class="svc__desc">Custom websites that feel as distinctive as the brand behind them — built to convert and to last.</p>
+        <div class="svc__img">
+          <img src="eb.png" alt="Website Design">
+        </div>
+      </div>
+
+      <div class="svc__item">
+        <span class="svc__num">03</span>
+        <h3 class="svc__name">Communication Strategy</h3>
+        <p class="svc__desc">Tone of voice, content direction, and storytelling that speaks directly to the people you want to reach.</p>
+        <div class="svc__img">
+          <img src="_MG_3086.jpg" alt="Communication Strategy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── TEAM ─────────────────────────────────────── -->
+  <section class="s s--st" id="team">
+    <span class="s__eye">03 — Meet the team</span>
+    <div class="team__top reveal">
+      <h2 class="s__h2">The people<br>behind<br>the <em>work.</em></h2>
+      <p class="team__sub">Every project is highly personalised. We start from the inside out — uncovering what is genuinely distinctive about you, then shaping it into something visible, coherent, and compelling.</p>
+    </div>
+
+    <div class="team__grid">
+
+      <!-- Emanuela Padellaro — emma.png -->
+      <div class="tc reveal">
+        <div class="tc__img">
+          <img src="emma.png" alt="Emanuela Padellaro">
+        </div>
+        <p class="tc__role">Founder · Creative Director</p>
+        <h3 class="tc__name">Emanuela Padellaro</h3>
+        <p class="tc__bio">Drawing on a background in Business Management and years exploring the intersection of strategy, creativity, and human behaviour, she combines structured thinking with a deep intuitive approach to help brands find and express their real identity. Whether crafting a brand identity, designing a website, or building a communication strategy — she starts from the inside out.</p>
+      </div>
+
+      <!-- Debora Padellaro — creativeHub-12 copy.jpg -->
+      <div class="tc reveal" data-d="1">
+        <div class="tc__img">
+          <img src="creativeHub-12 copy.jpg" alt="Debora Padellaro">
+        </div>
+        <p class="tc__role">Photography · Social Media</p>
+        <h3 class="tc__name">Debora Padellaro</h3>
+        <p class="tc__bio">She combines technical expertise with a refined creative eye to give life to timeless photography that feels artistic, authentic, and deeply aligned with the essence of each brand. Beginning her career in Tulum, she has worked with clients across fashion, restaurants, real estate, personal brands, and product-based businesses. Her photographic eye has a unique way of making you fall in love with yourself.</p>
+      </div>
+
+      <!-- Andrea Rojas — creativeHub-20.jpg -->
+      <div class="tc reveal" data-d="2">
+        <div class="tc__img">
+          <img src="creativeHub-20.jpg" alt="Andrea Rojas">
+        </div>
+        <p class="tc__role">Graphic Design · Visual Identity</p>
+        <h3 class="tc__name">Andrea Rojas</h3>
+        <p class="tc__bio">Specialising in visual identity, branding, and strategic design, she creates cohesive, functional brands with a strong conceptual and visual foundation. With a background in graphic design from Universidad del Valle de México and roots in the visual arts, her work is guided by structure, sensitivity, and intention. She also shares her practice through traditional printmaking workshops.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ── WHO I WORK WITH ───────────────────────────── -->
+  <section class="s s--dk">
+    <div class="cli__head reveal">
+      <span class="s__eye" style="margin-bottom:40px;">04 — Who we work with</span>
+      <h2 class="s__h2" style="color:var(--paper);">
+        We work with people building<br>something <span class="word-reveal"><em>meaningful.</em></span>
+      </h2>
+    </div>
+    <div class="cli__grid reveal">
+      <div class="cli__cell">
+        <span class="cli__cell-num">01</span>
+        <span class="cli__cell-name">Personal brands</span>
+      </div>
+      <div class="cli__cell">
+        <span class="cli__cell-num">02</span>
+        <span class="cli__cell-name">Conscious businesses</span>
+      </div>
+      <div class="cli__cell">
+        <span class="cli__cell-num">03</span>
+        <span class="cli__cell-name">Luxury hospitality</span>
+      </div>
+      <div class="cli__cell">
+        <span class="cli__cell-num">04</span>
+        <span class="cli__cell-name">Real estate &amp; regenerative development</span>
+      </div>
+      <div class="cli__cell">
+        <span class="cli__cell-num">05</span>
+        <span class="cli__cell-name">Retreats &amp; wellness</span>
+      </div>
+      <div class="cli__cell">
+        <span class="cli__cell-num">06</span>
+        <span class="cli__cell-name">Purpose-driven ventures</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── CTA ──────────────────────────────────────── -->
+  <section class="cta">
+    <span class="cta__eye">Open to collaborations</span>
+    <h2 class="cta__h2 reveal">
+      It's time to bring your<br><em>vision to life.</em>
+    </h2>
+    <p class="cta__sub reveal">
+      Let's create a brand and digital presence that feels unmistakably yours.
+    </p>
+    <div class="cta__btns reveal">
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--solid-lt">Let's talk <span>→</span></a>
+      <a href="portfolio.html" class="btn btn--ghost-lt">View our work <span>→</span></a>
+    </div>
+  </section>
+
+
+  <!-- ── FOOTER ────────────────────────────────────── -->
+  <footer>
+    <a href="index.html" class="ft__logo">
+      <img src="creative.png" alt="Creative Hub">
+    </a>
+    <div class="ft__links">
+      <a href="portfolio.html" class="ft__link">Portfolio</a>
+      <a href="#team" class="ft__link">Team</a>
+      <a href="mailto:emanuelacreativehub@gmail.com" class="ft__link">Contact</a>
+    </div>
+    <p class="ft__copy">© 2025 The Creative Hub</p>
+  </footer>
+
+
+  <script>
+    const obs = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+      }),
+      { threshold: 0.08 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
