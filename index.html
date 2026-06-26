@@ -88,6 +88,12 @@
     }
     .nav__link:hover { opacity: .65; }
 
+    .nav__ctas {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     .nav__cta {
       font-family: var(--sans);
       font-size: 9px;
@@ -648,7 +654,8 @@
 
       /* nav */
       .nav__mid { display: none; }
-      .nav__cta { padding: 9px 14px; font-size: 8px; }
+      .nav__ctas { gap: 6px; }
+      .nav__cta { padding: 9px 12px; font-size: 7px; }
       .nav__logo img { width: 36px; height: 36px; }
 
       /* hero */
@@ -709,7 +716,10 @@
     <div class="nav__mid">
       <a href="portfolio.html" class="nav__link">Portfolio</a>
     </div>
-    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
+    <div class="nav__ctas">
+      <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__cta">Text on WhatsApp</a>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
+    </div>
   </nav>
 
 
