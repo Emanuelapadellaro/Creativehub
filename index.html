@@ -3,16 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Creative Hub — Brand Identity &amp; Web Design</title>
+  <title>The Creative Hub — Conscious Branding &amp; Web Design Agency</title>
+  <meta name="description" content="The Creative Hub is a creative agency for conscious branding, purpose-driven website design and development, and communication strategy — for wellness businesses, retreats, and visionary founders.">
+  <link rel="canonical" href="https://www.emanuelacreativehub.com/">
 
   <!-- Social / WhatsApp preview -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://www.emanuelacreativehub.com/">
-  <meta property="og:title"       content="The Creative Hub — Brand Identity &amp; Web Design">
-  <meta property="og:description" content="Brands and websites that feel unmistakably yours. Brand identity, web design, and communication strategy for visionary businesses.">
+  <meta property="og:title"       content="The Creative Hub — Conscious Branding &amp; Web Design Agency">
+  <meta property="og:description" content="Brands and websites that feel unmistakably yours. Conscious branding, purpose-driven website design, and communication strategy for visionary businesses.">
   <meta property="og:image"       content="https://www.emanuelacreativehub.com/IMG_2156.JPG">
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://www.emanuelacreativehub.com/IMG_2156.JPG">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Creative Hub",
+    "url": "https://www.emanuelacreativehub.com/",
+    "logo": "https://www.emanuelacreativehub.com/creative.png",
+    "image": "https://www.emanuelacreativehub.com/IMG_2156.JPG",
+    "email": "emanuelacreativehub@gmail.com",
+    "description": "The Creative Hub is a creative agency offering conscious branding, purpose-driven website design and development, and communication strategy for personal brands, wellness businesses, retreats, and visionary founders.",
+    "founder": {
+      "@type": "Person",
+      "name": "Emanuela Padellaro"
+    },
+    "knowsAbout": [
+      "Conscious Branding",
+      "Brand Identity Design",
+      "Website Design and Development",
+      "Communication Strategy",
+      "Purpose-Driven Website Design",
+      "Wellness Website Design"
+    ],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Communication Strategy" } }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -526,6 +558,28 @@
       line-height: 1.3;
     }
 
+    /* ── FAQ ───────────────────────────────────────── */
+    .faq__list {
+      border-top: 1px solid var(--dim);
+    }
+    .faq__item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--dim);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 48px;
+    }
+    .faq__q {
+      font-size: 19px;
+      font-weight: 400;
+    }
+    .faq__a {
+      font-size: 14.5px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
     /* ── CTA ───────────────────────────────────────── */
     .cta {
       padding: clamp(80px,12vw,160px) var(--gx);
@@ -693,6 +747,9 @@
       .cli__grid { grid-template-columns: 1fr; }
       .cli__cell { padding: 32px 20px; }
       .cli__cell-name { font-size: 18px; }
+
+      /* faq */
+      .faq__item { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
 
       /* cta */
       .cta__h2  { font-size: clamp(26px, 7vw, 52px); }
@@ -917,6 +974,84 @@
       </div>
     </div>
   </section>
+
+
+  <!-- ── FAQ ──────────────────────────────────────── -->
+  <section class="s s--lt">
+    <span class="s__eye">05 — FAQ</span>
+    <h2 class="s__h2" style="margin-bottom:48px;">Questions,<br><em>answered.</em></h2>
+    <div class="faq__list reveal">
+      <div class="faq__item">
+        <p class="faq__q">Are you a creative agency for branding and web design?</p>
+        <p class="faq__a">Yes — The Creative Hub is a creative agency specialising in brand identity, website design, and communication strategy. We work end-to-end: positioning, naming, visual identity, and full website development.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Do you design wellness websites for retreats and conscious brands?</p>
+        <p class="faq__a">Yes. We work closely with retreats, wellness practitioners, and conscious businesses to build wellness websites that feel calm, credible, and aligned with their mission — alongside personal brands, hospitality, and regenerative real estate ventures.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">What does "conscious branding" mean, and do you offer it?</p>
+        <p class="faq__a">Conscious branding means building a brand identity from genuine values and purpose, rather than trends. It's the foundation of how we work — every project starts by uncovering what's authentically distinctive about a founder or business before any visual design begins.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Can you build a purpose-driven website for my business?</p>
+        <p class="faq__a">Yes. Purpose-driven website design is one of our core focuses — we build custom websites for founders and visionary businesses that need their site to reflect a deeper mission, not just sell a service.</p>
+      </div>
+      <div class="faq__item">
+        <p class="faq__q">Do you offer website development as a standalone service?</p>
+        <p class="faq__a">Yes — website design and development can be booked on its own or combined with brand identity and communication strategy, whatever your project needs.</p>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Are you a creative agency for branding and web design?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — The Creative Hub is a creative agency specialising in brand identity, website design, and communication strategy. We work end-to-end: positioning, naming, visual identity, and full website development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you design wellness websites for retreats and conscious brands?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We work closely with retreats, wellness practitioners, and conscious businesses to build wellness websites that feel calm, credible, and aligned with their mission — alongside personal brands, hospitality, and regenerative real estate ventures."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does conscious branding mean, and do you offer it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Conscious branding means building a brand identity from genuine values and purpose, rather than trends. It's the foundation of how we work — every project starts by uncovering what's authentically distinctive about a founder or business before any visual design begins."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you build a purpose-driven website for my business?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Purpose-driven website design is one of our core focuses — we build custom websites for founders and visionary businesses that need their site to reflect a deeper mission, not just sell a service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer website development as a standalone service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — website design and development can be booked on its own or combined with brand identity and communication strategy, whatever your project needs."
+        }
+      }
+    ]
+  }
+  </script>
 
 
   <!-- ── CTA ──────────────────────────────────────── -->
