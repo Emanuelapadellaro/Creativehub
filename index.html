@@ -563,21 +563,42 @@
       border-top: 1px solid var(--dim);
     }
     .faq__item {
-      padding: 32px 0;
       border-bottom: 1px solid var(--dim);
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: 48px;
+      padding: 26px 0;
     }
+    .faq__item summary {
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .faq__item summary::-webkit-details-marker { display: none; }
     .faq__q {
       font-size: 19px;
       font-weight: 400;
     }
+    .faq__icon {
+      font-family: var(--sans);
+      font-size: 20px;
+      font-weight: 300;
+      flex-shrink: 0;
+      transition: transform .3s var(--ease);
+    }
+    .faq__item[open] .faq__icon { transform: rotate(45deg); }
     .faq__a {
       font-size: 14.5px;
       font-weight: 300;
       line-height: 1.75;
       color: var(--ink);
+      max-width: 720px;
+      margin-top: 18px;
+    }
+    .faq__item[open] .faq__a { animation: faq-fade .3s var(--ease); }
+    @keyframes faq-fade {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     /* ── CTA ───────────────────────────────────────── */
@@ -749,7 +770,8 @@
       .cli__cell-name { font-size: 18px; }
 
       /* faq */
-      .faq__item { grid-template-columns: 1fr; gap: 10px; padding: 24px 0; }
+      .faq__item { padding: 20px 0; }
+      .faq__q { font-size: 16px; }
 
       /* cta */
       .cta__h2  { font-size: clamp(26px, 7vw, 52px); }
@@ -981,26 +1003,26 @@
     <span class="s__eye">05 — FAQ</span>
     <h2 class="s__h2" style="margin-bottom:48px;">Questions,<br><em>answered.</em></h2>
     <div class="faq__list reveal">
-      <div class="faq__item">
-        <p class="faq__q">Are you a creative agency for branding and web design?</p>
+      <details class="faq__item">
+        <summary><span class="faq__q">Are you a creative agency for branding and web design?</span><span class="faq__icon">+</span></summary>
         <p class="faq__a">Yes — The Creative Hub is a creative agency specialising in brand identity, website design, and communication strategy. We work end-to-end: positioning, naming, visual identity, and full website development.</p>
-      </div>
-      <div class="faq__item">
-        <p class="faq__q">Do you design wellness websites for retreats and conscious brands?</p>
+      </details>
+      <details class="faq__item">
+        <summary><span class="faq__q">Do you design wellness websites for retreats and conscious brands?</span><span class="faq__icon">+</span></summary>
         <p class="faq__a">Yes. We work closely with retreats, wellness practitioners, and conscious businesses to build wellness websites that feel calm, credible, and aligned with their mission — alongside personal brands, hospitality, and regenerative real estate ventures.</p>
-      </div>
-      <div class="faq__item">
-        <p class="faq__q">What does "conscious branding" mean, and do you offer it?</p>
+      </details>
+      <details class="faq__item">
+        <summary><span class="faq__q">What does "conscious branding" mean, and do you offer it?</span><span class="faq__icon">+</span></summary>
         <p class="faq__a">Conscious branding means building a brand identity from genuine values and purpose, rather than trends. It's the foundation of how we work — every project starts by uncovering what's authentically distinctive about a founder or business before any visual design begins.</p>
-      </div>
-      <div class="faq__item">
-        <p class="faq__q">Can you build a purpose-driven website for my business?</p>
+      </details>
+      <details class="faq__item">
+        <summary><span class="faq__q">Can you build a purpose-driven website for my business?</span><span class="faq__icon">+</span></summary>
         <p class="faq__a">Yes. Purpose-driven website design is one of our core focuses — we build custom websites for founders and visionary businesses that need their site to reflect a deeper mission, not just sell a service.</p>
-      </div>
-      <div class="faq__item">
-        <p class="faq__q">Do you offer website development as a standalone service?</p>
+      </details>
+      <details class="faq__item">
+        <summary><span class="faq__q">Do you offer website development as a standalone service?</span><span class="faq__icon">+</span></summary>
         <p class="faq__a">Yes — website design and development can be booked on its own or combined with brand identity and communication strategy, whatever your project needs.</p>
-      </div>
+      </details>
     </div>
   </section>
 
