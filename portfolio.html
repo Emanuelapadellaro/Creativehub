@@ -6,6 +6,8 @@
   <title>Portfolio — The Creative Hub | Conscious Branding &amp; Web Design Agency</title>
   <meta name="description" content="Browse brand identity, website design and development, and editorial projects by The Creative Hub — a creative agency for conscious, purpose-driven brands.">
   <link rel="canonical" href="https://www.emanuelacreativehub.com/portfolio.html">
+  <link rel="icon" type="image/png" href="creative.png">
+  <link rel="apple-touch-icon" href="creative.png">
 
   <!-- Social / WhatsApp preview -->
   <meta property="og:type"        content="website">
@@ -49,6 +51,28 @@
       color: var(--ink);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── CUSTOM CURSOR ─────────────────────────────── */
+    * { cursor: none; }
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #FFF8E7;
+      border: 1px solid rgba(11,11,9,.3);
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate3d(-50%, -50%, 0);
+      transition: width .2s var(--ease), height .2s var(--ease);
+    }
+    .cursor-dot.is-active { width: 30px; height: 30px; }
+    @media (hover: none), (pointer: coarse) {
+      * { cursor: auto; }
+      .cursor-dot { display: none; }
     }
 
     /* ── NAV ───────────────────────────────────────── */
@@ -177,9 +201,9 @@
     .port-hero__h1 em { font-style: italic; }
 
     .port-hero__body {
-      font-size: clamp(14px, 1.25vw, 17px);
+      font-size: 19px;
       font-weight: 300;
-      line-height: 1.82;
+      line-height: 1.85;
       color: var(--paper);
       max-width: 400px;
       margin-bottom: 44px;
@@ -211,7 +235,6 @@
       padding: 20px var(--gx);
       border-right: 1px solid var(--dim);
       transition: background .2s var(--ease);
-      cursor: default;
     }
     .proj-index__item:last-child { border-right: none; }
     .proj-index__item:hover { background: var(--stone); }
@@ -351,7 +374,7 @@
     }
 
     .proj__desc {
-      font-size: clamp(15px, 1.4vw, 19px);
+      font-size: 19px;
       font-weight: 300;
       line-height: 1.8;
     }
@@ -380,7 +403,7 @@
       min-height: 44vh;
     }
     .proj__text-desc {
-      font-size: clamp(15px, 1.35vw, 18px);
+      font-size: 19px;
       font-weight: 300;
       line-height: 1.85;
       margin-bottom: 44px;
@@ -476,9 +499,9 @@
     }
     .cta__h2 em { font-style: italic; }
     .cta__sub {
-      font-size: clamp(14px,1.25vw,17px);
+      font-size: 19px;
       font-weight: 300;
-      line-height: 1.72;
+      line-height: 1.75;
       color: var(--paper);
       max-width: 480px;
       margin: 0 auto 52px;
@@ -591,7 +614,6 @@
       .port-hero__right { height: 72vw; }
       .port-hero__eye   { display: none; }
       .port-hero__h1    { font-size: clamp(28px, 8vw, 48px); }
-      .port-hero__body  { font-size: 15px; }
 
       /* project index */
       .proj-index { grid-template-columns: 1fr 1fr; }
@@ -635,6 +657,8 @@
   </style>
 </head>
 <body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ── NAVIGATION ───────────────────────────────── -->
   <nav class="nav">
@@ -963,6 +987,17 @@
       { threshold: 0.06 }
     );
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <script>
+    const cursorDot = document.querySelector('.cursor-dot');
+    window.addEventListener('mousemove', e => {
+      cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+    });
+    document.querySelectorAll('a, button, summary').forEach(el => {
+      el.addEventListener('mouseenter', () => cursorDot.classList.add('is-active'));
+      el.addEventListener('mouseleave', () => cursorDot.classList.remove('is-active'));
+    });
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
