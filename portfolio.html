@@ -133,6 +133,60 @@
     }
     .nav__cta:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 
+    .nav__burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .nav__burger span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--paper);
+      transition: transform .25s var(--ease), opacity .25s var(--ease);
+    }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav__mobile {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: var(--ink);
+      border-bottom: 1px solid rgba(244,243,239,.08);
+      display: flex;
+      flex-direction: column;
+      padding: 4px var(--gx) 20px;
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s var(--ease), transform .22s var(--ease);
+    }
+    .nav__mobile.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .nav__mobile-link {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--paper);
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(244,243,239,.08);
+    }
+    .nav__mobile-link:last-child { border-bottom: none; }
+
     /* ── BUTTONS ───────────────────────────────────── */
     .btn {
       display: inline-flex;
@@ -631,8 +685,8 @@
 
       /* nav */
       .nav__mid { display: none; }
-      .nav__ctas { gap: 6px; }
-      .nav__cta { padding: 9px 12px; font-size: 7px; }
+      .nav__ctas { display: none; }
+      .nav__burger { display: flex; }
       .nav__logo img { width: 36px; height: 36px; }
 
       /* portfolio hero */
@@ -698,7 +752,16 @@
       <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__cta">Text on WhatsApp</a>
       <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
     </div>
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="/portfolio" class="nav__mobile-link">Portfolio</a>
+    <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__mobile-link">Text on WhatsApp</a>
+    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__mobile-link">Book a call</a>
+  </div>
 
 
   <!-- ── PORTFOLIO HERO ────────────────────────────── -->
@@ -715,7 +778,7 @@
       </a>
     </div>
     <div class="port-hero__right">
-      <img src="_MG_3105.jpg" alt="The Creative Hub">
+      <img src="img/portfolio-hero.jpg" alt="The Creative Hub" loading="eager" fetchpriority="high" decoding="async">
     </div>
   </section>
 
@@ -775,43 +838,43 @@
       <p class="proj__story-line">Olivo is a healthy restaurant about to open in Tulum that gives importance to macros and food as medicine. We designed everything from start to finish, from the brand identity to actively shaping how the location will look.</p>
     </div>
     <div class="proj__img-full proj__gap reveal">
-      <img src="a.png" alt="Olivo — brand identity title slide">
+      <img src="img/olivo-a.jpg" alt="Olivo — brand identity title slide" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__story reveal">
       <p class="proj__story-line">We focused on creating a visual world based on the brand's values, transforming them into a strong, cohesive identity.</p>
     </div>
     <div class="proj__img-full proj__gap reveal">
-      <img src="b.png" alt="Olivo — visual world: natural, human, functional">
+      <img src="img/olivo-b.jpg" alt="Olivo — visual world: natural, human, functional" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__story reveal">
       <p class="proj__story-line">From there, we advised on the materials that would make the space reflect the brand behind it and its values.</p>
     </div>
     <div class="proj__img-full proj__gap reveal">
-      <img src="3.png" alt="Olivo — materials and textures moodboard">
+      <img src="img/olivo-3.jpg" alt="Olivo — materials and textures moodboard" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__story reveal">
       <p class="proj__story-line">We selected colors and fonts that reflect the brand's natural essence and style.</p>
     </div>
     <div class="proj__img-full proj__gap reveal">
-      <img src="4.png" alt="Olivo — colour palette and typography">
+      <img src="img/olivo-4.jpg" alt="Olivo — colour palette and typography" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__story reveal">
       <p class="proj__story-line">We designed a logo that communicates the brand's authenticity, almost like a digital imprint, while at the same time subtly recalling an olive, inspired by the brand's name.</p>
     </div>
     <div class="proj__img-full proj__gap reveal">
-      <img src="5new.png" alt="Olivo — logo system: colour variants, isotipo, and wordmark">
+      <img src="img/olivo-5.jpg" alt="Olivo — logo system: colour variants, isotipo, and wordmark" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__story reveal">
       <p class="proj__story-line">Finally, we defined the Instagram strategy and the content pillars that will guide the brand's social media presence.</p>
     </div>
     <div class="proj__2col proj__gap reveal" style="align-items:start;">
-      <img src="6.png" alt="Olivo — Instagram content pillars">
-      <img src="7new.png" alt="Olivo — Instagram profile and post design">
+      <img src="img/olivo-6.jpg" alt="Olivo — Instagram content pillars" loading="lazy" decoding="async">
+      <img src="img/olivo-7.jpg" alt="Olivo — Instagram profile and post design" loading="lazy" decoding="async">
     </div>
 
   </article>
@@ -842,7 +905,7 @@
     </div>
 
     <div class="proj__img-full reveal">
-      <img src="jls .png" alt="JLS Video Agency — website redesign">
+      <img src="img/jls-hero.jpg" alt="JLS Video Agency — website redesign" loading="lazy" decoding="async">
     </div>
 
     <div class="reveal" style="text-align:center;margin-top:28px;">
@@ -874,7 +937,7 @@
 
     <div class="proj__split reveal">
       <div class="proj__split-img">
-        <img src="MOONSHIFT.2024/MOONSHIFT.2024-1.png" alt="The Moonshift — brand identity">
+        <img src="img/moonshift-1.jpg" alt="The Moonshift — brand identity" loading="lazy" decoding="async">
       </div>
       <div class="proj__split-text">
         <h2 class="proj__title"><em>The</em> Moonshift</h2>
@@ -886,12 +949,12 @@
     </div>
 
     <div class="proj__2col proj__gap reveal">
-      <img src="MOONSHIFT.2024/MOONSHIFT.2024-3.png" alt="The Moonshift — label design">
-      <img src="MOONSHIFT.2024/MOONSHIFT.2024-4.png" alt="The Moonshift — brand materials">
+      <img src="img/moonshift-3.jpg" alt="The Moonshift — label design" loading="lazy" decoding="async">
+      <img src="img/moonshift-4.jpg" alt="The Moonshift — brand materials" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__img-full proj__gap reveal">
-      <img src="MOONSHIFT.2024/MOONSHIFT.2024-2.png" alt="The Moonshift — brand system">
+      <img src="img/moonshift-2.jpg" alt="The Moonshift — brand system" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__content reveal">
@@ -932,20 +995,20 @@
     </div>
 
     <div class="proj__img-full reveal">
-      <img src="Andrea the moonshift/Andrea portfolio Editorial bacab/Free_3_Magazines_Mockup(US).jpg"
-           alt="Bacab Magazine — three issues">
+      <img src="img/bacab-issues.jpg"
+           alt="Bacab Magazine — three issues" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__2col reveal" style="align-items:start;grid-template-columns:1fr 2fr;">
-      <img src="Andrea the moonshift/Andrea portfolio Editorial bacab/M a g a z i n e B a c a b  %5BRecuperado%5D-01.png"
-           alt="Bacab Magazine — cover">
-      <img src="Andrea the moonshift/Andrea portfolio Editorial bacab/169-magazine-mockup-02.png"
-           alt="Bacab Magazine — Rincones de Ensueño spread">
+      <img src="img/bacab-cover.jpg"
+           alt="Bacab Magazine — cover" loading="lazy" decoding="async">
+      <img src="img/bacab-spread-wide.jpg"
+           alt="Bacab Magazine — Rincones de Ensueño spread" loading="lazy" decoding="async">
     </div>
 
     <div class="proj__2col proj__gap reveal" style="align-items:start;">
-      <img src="1.png" alt="Bacab Magazine — interior spread">
-      <img src="2.png" alt="Bacab Magazine — interior spread">
+      <img src="img/bacab-spread-1.jpg" alt="Bacab Magazine — interior spread" loading="lazy" decoding="async">
+      <img src="img/bacab-spread-2.jpg" alt="Bacab Magazine — interior spread" loading="lazy" decoding="async">
     </div>
 
   </article>
@@ -981,12 +1044,12 @@
 
     <!-- project screenshots — 2×2 grid, full natural height -->
     <div class="proj__2col reveal" style="margin-top:64px;align-items:start;">
-      <img src="122.png" alt="Conexión Coyote — brand presentation">
-      <img src="123.png" alt="Conexión Coyote — brand presentation">
+      <img src="img/coyote-1.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
+      <img src="img/coyote-2.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
     </div>
     <div class="proj__2col proj__gap reveal" style="align-items:start;">
-      <img src="124.png" alt="Conexión Coyote — brand presentation">
-      <img src="125.png" alt="Conexión Coyote — brand presentation">
+      <img src="img/coyote-3.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
+      <img src="img/coyote-4.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
     </div>
 
   </article>
@@ -1023,18 +1086,18 @@
 
     <!-- hero — colour palette / moodboard -->
     <div class="proj__img-full proj__gap reveal">
-      <img src="Galanta.png" alt="Galanta — colour palette and moodboard">
+      <img src="img/galanta-hero.jpg" alt="Galanta — colour palette and moodboard" loading="lazy" decoding="async">
     </div>
 
     <!-- 2-col: brand card UI + laptop mockup -->
     <div class="proj__2col reveal">
-      <img src="Galanta 1.png" alt="Galanta — brand identity card">
-      <img src="Galan.png"    alt="Galanta — website on laptop">
+      <img src="img/galanta-1.jpg" alt="Galanta — brand identity card" loading="lazy" decoding="async">
+      <img src="img/galanta-laptop.jpg" alt="Galanta — website on laptop" loading="lazy" decoding="async">
     </div>
 
     <!-- stationery system — full width -->
     <div class="proj__img-full proj__gap reveal">
-      <img src="Galanta 3.png" alt="Galanta — stationery and brand collateral">
+      <img src="img/galanta-3.jpg" alt="Galanta — stationery and brand collateral" loading="lazy" decoding="async">
     </div>
 
   </article>
@@ -1076,6 +1139,21 @@
       { threshold: 0.06 }
     );
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <script>
+    const navBurger = document.getElementById('navBurger');
+    const navMobile = document.getElementById('navMobile');
+    if (navBurger && navMobile) {
+      navBurger.addEventListener('click', () => {
+        const open = navMobile.classList.toggle('is-open');
+        navBurger.setAttribute('aria-expanded', open);
+      });
+      navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navMobile.classList.remove('is-open');
+        navBurger.setAttribute('aria-expanded', 'false');
+      }));
+    }
   </script>
 
   <script>

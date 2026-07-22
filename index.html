@@ -164,6 +164,60 @@
     }
     .nav__cta:hover { background: var(--ink); color: var(--paper); }
 
+    .nav__burger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .nav__burger span {
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--ink);
+      transition: transform .25s var(--ease), opacity .25s var(--ease);
+    }
+    .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav__burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .nav__burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav__mobile {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      z-index: 99;
+      background: var(--paper);
+      border-bottom: 1px solid var(--dim);
+      display: flex;
+      flex-direction: column;
+      padding: 4px var(--gx) 20px;
+      transform: translateY(-10px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s var(--ease), transform .22s var(--ease);
+    }
+    .nav__mobile.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .nav__mobile-link {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--dim);
+    }
+    .nav__mobile-link:last-child { border-bottom: none; }
+
     /* ── HERO ──────────────────────────────────────── */
     .hero {
       position: relative;
@@ -780,8 +834,8 @@
 
       /* nav */
       .nav__mid { display: none; }
-      .nav__ctas { gap: 6px; }
-      .nav__cta { padding: 9px 12px; font-size: 7px; }
+      .nav__ctas { display: none; }
+      .nav__burger { display: flex; }
       .nav__logo img { width: 36px; height: 36px; }
 
       /* hero */
@@ -851,7 +905,16 @@
       <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__cta">Text on WhatsApp</a>
       <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
     </div>
+    <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="/portfolio" class="nav__mobile-link">Portfolio</a>
+    <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__mobile-link">Text on WhatsApp</a>
+    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__mobile-link">Book a call</a>
+  </div>
 
 
   <!-- ── HERO ─────────────────────────────────────── -->
@@ -943,7 +1006,7 @@
         <h3 class="svc__name">Brand Identity</h3>
         <p class="svc__desc">Positioning, naming, visual identity, and messaging that expresses who you truly are.</p>
         <div class="svc__img">
-          <img src="DTS_OBJECTS_Daniel_Farò_Photos_ID7368.jpg" alt="Brand Identity">
+          <img src="img/service-brand.jpg" alt="Brand Identity" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -952,7 +1015,7 @@
         <h3 class="svc__name">Website Design</h3>
         <p class="svc__desc">Custom websites that feel as distinctive as the brand behind them — built to convert and to last.</p>
         <div class="svc__img">
-          <img src="eb.png" alt="Website Design">
+          <img src="img/service-web.jpg" alt="Website Design" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -961,7 +1024,7 @@
         <h3 class="svc__name">Communication Strategy</h3>
         <p class="svc__desc">Tone of voice, content direction, and storytelling that speaks directly to the people you want to reach.</p>
         <div class="svc__img">
-          <img src="_MG_3086.jpg" alt="Communication Strategy">
+          <img src="img/service-strategy.jpg" alt="Communication Strategy" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -982,7 +1045,7 @@
       <!-- Emanuela Padellaro — emma.png -->
       <div class="tc reveal">
         <div class="tc__img">
-          <img src="emma.png" alt="Emanuela Padellaro">
+          <img src="img/team-emanuela.jpg" alt="Emanuela Padellaro" loading="lazy" decoding="async">
         </div>
         <div class="tc__text">
           <p class="tc__role">Founder · Creative Director</p>
@@ -995,7 +1058,7 @@
       <!-- Debora Padellaro — creativeHub-12 copy.jpg -->
       <div class="tc reveal" data-d="1">
         <div class="tc__img">
-          <img src="creativeHub-12 copy.jpg" alt="Debora Padellaro">
+          <img src="img/team-debora.jpg" alt="Debora Padellaro" loading="lazy" decoding="async">
         </div>
         <div class="tc__text">
           <p class="tc__role">Photography · Social Media</p>
@@ -1008,7 +1071,7 @@
       <!-- Andrea Rojas — creativeHub-20.jpg -->
       <div class="tc reveal" data-d="2">
         <div class="tc__img">
-          <img src="creativeHub-20.jpg" alt="Andrea Rojas">
+          <img src="img/team-andrea.jpg" alt="Andrea Rojas" loading="lazy" decoding="async">
         </div>
         <div class="tc__text">
           <p class="tc__role">Graphic Design · Visual Identity</p>
@@ -1175,6 +1238,21 @@
       { threshold: 0.08 }
     );
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
+  <script>
+    const navBurger = document.getElementById('navBurger');
+    const navMobile = document.getElementById('navMobile');
+    if (navBurger && navMobile) {
+      navBurger.addEventListener('click', () => {
+        const open = navMobile.classList.toggle('is-open');
+        navBurger.setAttribute('aria-expanded', open);
+      });
+      navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        navMobile.classList.remove('is-open');
+        navBurger.setAttribute('aria-expanded', 'false');
+      }));
+    }
   </script>
 
   <script>
