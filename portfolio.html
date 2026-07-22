@@ -226,7 +226,7 @@
       background: var(--paper);
       border-bottom: 1px solid var(--dim);
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(5,1fr);
     }
     .proj-index__item {
       display: flex;
@@ -377,6 +377,17 @@
       font-size: 19px;
       font-weight: 300;
       line-height: 1.8;
+    }
+
+    /* narrative image sequence — caption above each frame */
+    .proj__story { max-width: 700px; margin: 0 auto 30px; text-align: center; }
+    .proj__story-line {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(19px, 2.1vw, 27px);
+      line-height: 1.55;
+      letter-spacing: -.005em;
     }
 
     .proj__content {
@@ -567,10 +578,10 @@
       .port-hero__right { height: 55vw; min-height: 260px; }
       .port-hero__left  { padding-top: 40px; padding-bottom: 52px; }
 
-      /* project index — 2×2 */
+      /* project index — 2 col */
       .proj-index { grid-template-columns: 1fr 1fr; }
-      .proj-index__item:nth-child(2) { border-right: none; }
-      .proj-index__item:nth-child(3) { border-right: 1px solid var(--dim); }
+      .proj-index__item:nth-child(even) { border-right: none; }
+      .proj-index__item:nth-child(odd)  { border-right: 1px solid var(--dim); }
 
       /* moonshift split — stack */
       .proj__split { grid-template-columns: 1fr; }
@@ -699,31 +710,103 @@
   <div class="proj-index">
     <div class="proj-index__item">
       <span class="proj-index__num">01</span>
-      <span class="proj-index__name">The Moonshift</span>
+      <span class="proj-index__name">Olivo</span>
     </div>
     <div class="proj-index__item">
       <span class="proj-index__num">02</span>
-      <span class="proj-index__name">Bacab Magazine</span>
+      <span class="proj-index__name">The Moonshift</span>
     </div>
     <div class="proj-index__item">
       <span class="proj-index__num">03</span>
-      <span class="proj-index__name">Conexión Coyote</span>
+      <span class="proj-index__name">Bacab Magazine</span>
     </div>
     <div class="proj-index__item">
       <span class="proj-index__num">04</span>
+      <span class="proj-index__name">Conexión Coyote</span>
+    </div>
+    <div class="proj-index__item">
+      <span class="proj-index__num">05</span>
       <span class="proj-index__name">Galanta</span>
     </div>
   </div>
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 01 — THE MOONSHIFT
+       PROJECT 01 — OLIVO
+  ═════════════════════════════════════════════════ -->
+  <article class="proj proj--lt" id="olivo">
+
+    <div class="proj__meta reveal">
+      <div class="proj__meta-left">
+        <span class="proj__num">01</span>
+        <div class="proj__tags">
+          <span class="proj__tag">Brand Development</span>
+          <span class="proj__tag">Brand Design</span>
+          <span class="proj__tag">Logo Design</span>
+          <span class="proj__tag">Location Consulting</span>
+          <span class="proj__tag">Instagram Strategy Design</span>
+        </div>
+      </div>
+      <span class="proj__credit">The Creative Hub</span>
+    </div>
+
+    <div class="proj__title reveal" style="margin-bottom:12px;"><em>Olivo</em></div>
+    <p class="proj__subtitle reveal">Healthy Restaurant · Tulum · Brand Identity</p>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">Olivo is a healthy restaurant about to open in Tulum that gives importance to macros and food as medicine. We designed everything from start to finish, from the brand identity to actively shaping how the location will look.</p>
+    </div>
+    <div class="proj__img-full proj__gap reveal">
+      <img src="a.png" alt="Olivo — brand identity title slide">
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">We focused on creating a visual world based on the brand's values, transforming them into a strong, cohesive identity.</p>
+    </div>
+    <div class="proj__img-full proj__gap reveal">
+      <img src="b.png" alt="Olivo — visual world: natural, human, functional">
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">From there, we advised on the materials that would make the space reflect the brand behind it and its values.</p>
+    </div>
+    <div class="proj__img-full proj__gap reveal">
+      <img src="3.png" alt="Olivo — materials and textures moodboard">
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">We selected colors and fonts that reflect the brand's natural essence and style.</p>
+    </div>
+    <div class="proj__img-full proj__gap reveal">
+      <img src="4.png" alt="Olivo — colour palette and typography">
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">We designed a logo that communicates the brand's authenticity, almost like a digital imprint, while at the same time subtly recalling an olive, inspired by the brand's name.</p>
+    </div>
+    <div class="proj__img-full proj__gap reveal">
+      <img src="5.png" alt="Olivo — logo system: wordmark and isotipo">
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">Finally, we defined the Instagram strategy and the content pillars that will guide the brand's social media presence.</p>
+    </div>
+    <div class="proj__2col proj__gap reveal" style="align-items:start;">
+      <img src="6.png" alt="Olivo — Instagram content pillars">
+      <img src="7.png" alt="Olivo — Instagram profile and post design">
+    </div>
+
+  </article>
+
+
+  <!-- ════════════════════════════════════════════════
+       PROJECT 02 — THE MOONSHIFT
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--dk" id="moonshift">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">01</span>
+        <span class="proj__num">02</span>
         <div class="proj__tags">
           <span class="proj__tag">Branding</span>
           <span class="proj__tag">Visual Identity</span>
@@ -769,13 +852,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 02 — BACAB MAGAZINE
+       PROJECT 03 — BACAB MAGAZINE
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--lt" id="bacab">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">02</span>
+        <span class="proj__num">03</span>
         <div class="proj__tags">
           <span class="proj__tag">Editorial Design</span>
           <span class="proj__tag">Art Direction</span>
@@ -830,13 +913,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 03 — BRAND CONEXIÓN COYOTE
+       PROJECT 04 — BRAND CONEXIÓN COYOTE
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--st" id="coyote">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">03</span>
+        <span class="proj__num">04</span>
         <div class="proj__tags">
           <span class="proj__tag">Brand Identity</span>
           <span class="proj__tag">Strategy</span>
@@ -850,7 +933,7 @@
       <div>
         <h2 class="proj__title reveal">Conexión<br><em>Coyote</em></h2>
         <p class="proj__subtitle reveal">Brand Identity · 2024</p>
-        <div class="proj__deco-num reveal" style="font-size:clamp(80px,14vw,200px);color:rgba(11,11,9,.05);" aria-hidden="true">03</div>
+        <div class="proj__deco-num reveal" style="font-size:clamp(80px,14vw,200px);color:rgba(11,11,9,.05);" aria-hidden="true">04</div>
       </div>
       <div style="padding-top:4px;">
         <p class="proj__text-desc reveal">
@@ -891,13 +974,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 04 — GALANTA
+       PROJECT 05 — GALANTA
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--dk" id="galanta">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">04</span>
+        <span class="proj__num">05</span>
         <div class="proj__tags">
           <span class="proj__tag">Visual Identity</span>
           <span class="proj__tag">Brand Development</span>
