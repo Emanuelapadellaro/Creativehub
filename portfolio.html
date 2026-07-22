@@ -239,10 +239,12 @@
     .proj-index__item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      padding: 20px var(--gx);
+      gap: 10px;
+      padding: 20px 16px;
       border-right: 1px solid var(--dim);
       transition: background .2s var(--ease);
+      cursor: pointer;
+      overflow: hidden;
     }
     .proj-index__item:last-child { border-right: none; }
     .proj-index__item:hover { background: var(--stone); }
@@ -251,12 +253,16 @@
       font-size: 9px;
       letter-spacing: .18em;
       color: var(--ink);
+      flex-shrink: 0;
     }
     .proj-index__name {
       font-family: var(--serif);
       font-size: 14px;
       font-weight: 400;
       color: var(--ink);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* ── PROJECT BASE ──────────────────────────────── */
@@ -714,30 +720,30 @@
 
   <!-- ── PROJECT INDEX ─────────────────────────────── -->
   <div class="proj-index">
-    <div class="proj-index__item">
+    <a class="proj-index__item" href="#olivo">
       <span class="proj-index__num">01</span>
       <span class="proj-index__name">Olivo</span>
-    </div>
-    <div class="proj-index__item">
+    </a>
+    <a class="proj-index__item" href="#jls">
       <span class="proj-index__num">02</span>
       <span class="proj-index__name">JLS Video Agency</span>
-    </div>
-    <div class="proj-index__item">
+    </a>
+    <a class="proj-index__item" href="#moonshift">
       <span class="proj-index__num">03</span>
       <span class="proj-index__name">The Moonshift</span>
-    </div>
-    <div class="proj-index__item">
+    </a>
+    <a class="proj-index__item" href="#bacab">
       <span class="proj-index__num">04</span>
       <span class="proj-index__name">Bacab Magazine</span>
-    </div>
-    <div class="proj-index__item">
+    </a>
+    <a class="proj-index__item" href="#coyote">
       <span class="proj-index__num">05</span>
       <span class="proj-index__name">Conexión Coyote</span>
-    </div>
-    <div class="proj-index__item">
+    </a>
+    <a class="proj-index__item" href="#galanta">
       <span class="proj-index__num">06</span>
       <span class="proj-index__name">Galanta</span>
-    </div>
+    </a>
   </div>
 
 
@@ -829,7 +835,7 @@
     <div class="proj__title reveal" style="margin-bottom:40px;">JLS <em>Video Agency</em></div>
     <p class="proj__subtitle reveal">Video Production Studio · Santa Monica · Website Rebranding</p>
 
-    <div class="proj__story reveal" style="max-width:1040px;">
+    <div class="proj__story reveal" style="max-width:1040px;margin-bottom:64px;">
       <p class="proj__story-line">JLS is a boutique video studio in Santa Monica that builds shows for doctors, founders, podcasters, athletes, agencies, and expert-led brands. We worked on a complete website restructuring and rebranding following their concept, "Content with the Soul of Cinema." We utilized their existing brand colors, case studies, videos, and photography to highlight their expertise and track record while keeping the visual identity cohesive with their brand personality.</p>
     </div>
 
