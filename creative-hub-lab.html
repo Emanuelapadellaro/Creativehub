@@ -235,6 +235,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: .28em;
       text-align: center;
       font-family: var(--serif);
       font-weight: 300;
@@ -244,6 +245,17 @@
       color: var(--paper);
     }
     .lab-hero__title em { font-style: italic; margin-left: .2em; }
+
+    /* word-by-word entrance, matching homepage hero */
+    .hero__word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: word-rise 1s cubic-bezier(.22,1,.36,1) calc(.3s + var(--d) * .65s) forwards;
+    }
+    @keyframes word-rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* ── SPLIT (image accompanies text, alternating sides) ── */
     .lab-split {
@@ -605,7 +617,7 @@
   <div class="lab-hero">
     <img src="img/lab-hero-alt.jpg" alt="Creative Hub Lab" loading="eager" fetchpriority="high" decoding="async">
     <div class="lab-hero__overlay" style="background:none;"></div>
-    <div class="lab-hero__title" style="color:var(--ink);">Creative Hub <em>LAB</em></div>
+    <div class="lab-hero__title" style="color:var(--ink);"><span class="hero__word" style="--d:0">Creative</span> <span class="hero__word" style="--d:1">Hub</span> <span class="hero__word" style="--d:2"><em>LAB</em></span></div>
   </div>
 
 
