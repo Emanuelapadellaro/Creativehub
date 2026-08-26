@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Creative Hub — Conscious Branding &amp; Web Design Agency</title>
-  <meta name="description" content="The Creative Hub is a creative agency for conscious branding, purpose-driven website design and development, and communication strategy — for wellness businesses, retreats, and visionary founders.">
+  <title>The Creative Hub — Strategy, Brand, Website & Ads as One System</title>
+  <meta name="description" content="The Creative Hub is a strategy-led studio for founders who want their brand, website, and ads working as one system — designed with restraint, driven by results.">
   <link rel="canonical" href="https://www.emanuelacreativehub.com/">
   <link rel="icon" type="image/png" href="creative.png">
   <link rel="apple-touch-icon" href="creative.png">
@@ -12,8 +12,8 @@
   <!-- Social / WhatsApp preview -->
   <meta property="og:type"        content="website">
   <meta property="og:url"         content="https://www.emanuelacreativehub.com/">
-  <meta property="og:title"       content="The Creative Hub — Conscious Branding &amp; Web Design Agency">
-  <meta property="og:description" content="Brands and websites that feel unmistakably yours. Conscious branding, purpose-driven website design, and communication strategy for visionary businesses.">
+  <meta property="og:title"       content="The Creative Hub — Strategy, Brand, Website & Ads as One System">
+  <meta property="og:description" content="Strategy, brand, and design that grow the business — not just the look. A strategy-led studio for founders who want their brand, website, and ads working as one system.">
   <meta property="og:image"       content="https://www.emanuelacreativehub.com/IMG_2156.JPG">
   <meta name="twitter:card"       content="summary_large_image">
   <meta name="twitter:image"      content="https://www.emanuelacreativehub.com/IMG_2156.JPG">
@@ -27,23 +27,24 @@
     "logo": "https://www.emanuelacreativehub.com/creative.png",
     "image": "https://www.emanuelacreativehub.com/IMG_2156.JPG",
     "email": "emanuelacreativehub@gmail.com",
-    "description": "The Creative Hub is a creative agency offering conscious branding, purpose-driven website design and development, and communication strategy for personal brands, wellness businesses, retreats, and visionary founders.",
+    "description": "The Creative Hub is a strategy-led studio offering positioning strategy, brand identity, website design and development, and paid growth for founders who want their brand, website, and ads working as one system.",
     "founder": {
       "@type": "Person",
       "name": "Emanuela Padellaro"
     },
     "knowsAbout": [
-      "Conscious Branding",
+      "Brand Strategy",
       "Brand Identity Design",
       "Website Design and Development",
-      "Communication Strategy",
-      "Purpose-Driven Website Design",
-      "Wellness Website Design"
+      "Paid Advertising & Growth",
+      "Positioning Strategy",
+      "Conversion-Focused Web Design"
     ],
     "makesOffer": [
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Brand Identity" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Communication Strategy" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategy" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Ads & Growth" } }
     ]
   }
   </script>
@@ -61,8 +62,8 @@
     /* ── TOKENS ────────────────────────────────────── */
     :root {
       --ink:    #0b0b09;
-      --paper:  #f4f3ef;
-      --stone:  #e8e7e2;
+      --paper:  #ffffff;
+      --stone:  #ececec;
       --dust:   #cdccc6;
       --dim:    rgba(11,11,9,0.07);
       --serif:  'Cormorant Garamond', Georgia, 'Times New Roman', serif;
@@ -75,7 +76,7 @@
 
     /* ── BASE ──────────────────────────────────────── */
     body {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-weight: 300;
       background: var(--paper);
       color: var(--ink);
@@ -115,8 +116,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 var(--gx);
-      background: var(--paper);
-      border-bottom: 1px solid var(--dim);
+      background: var(--ink);
+      border-bottom: 1px solid rgba(244,243,239,.12);
     }
 
     .nav__logo img {
@@ -124,7 +125,7 @@
       height: 44px;
       border-radius: 50%;
       object-fit: contain;
-      background: var(--paper);
+      background: var(--ink);
     }
 
     .nav__mid {
@@ -141,7 +142,7 @@
       font-weight: 400;
       letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--paper);
       transition: opacity .2s var(--ease);
     }
     .nav__link:hover { opacity: .65; }
@@ -158,13 +159,13 @@
       font-weight: 500;
       letter-spacing: .18em;
       text-transform: uppercase;
-      color: var(--ink);
-      border: 1px solid var(--ink);
+      color: var(--paper);
+      border: 1px solid var(--paper);
       padding: 10px 20px;
       white-space: nowrap;
       transition: background .2s var(--ease), color .2s var(--ease);
     }
-    .nav__cta:hover { background: var(--ink); color: var(--paper); }
+    .nav__cta:hover { background: var(--paper); color: var(--ink); }
 
     .nav__burger {
       display: none;
@@ -184,7 +185,7 @@
       display: block;
       width: 20px;
       height: 1px;
-      background: var(--ink);
+      background: var(--paper);
       transition: transform .25s var(--ease), opacity .25s var(--ease);
     }
     .nav__burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
@@ -197,8 +198,8 @@
       left: 0;
       right: 0;
       z-index: 99;
-      background: var(--paper);
-      border-bottom: 1px solid var(--dim);
+      background: var(--ink);
+      border-bottom: 1px solid rgba(244,243,239,.12);
       display: flex;
       flex-direction: column;
       padding: 4px var(--gx) 20px;
@@ -214,11 +215,46 @@
       font-weight: 400;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--paper);
       padding: 18px 0;
-      border-bottom: 1px solid var(--dim);
+      border-bottom: 1px solid rgba(244,243,239,.12);
     }
     .nav__mobile-link:last-child { border-bottom: none; }
+
+    /* ── INTRO LOADER ──────────────────────────────── */
+    .intro-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--paper);
+      display: flex;
+      align-items: center;
+      padding: 0 var(--gx);
+      animation: intro-loader-out 1s ease 4.45s forwards;
+    }
+    .intro-loader__inner {
+      max-width: 480px;
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+    .intro-loader__word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: intro-word-rise .5s cubic-bezier(.22,1,.36,1) calc(.15s + var(--d) * .4s) forwards;
+    }
+    @keyframes intro-word-rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes intro-loader-out {
+      to { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .intro-loader { display: none; }
+    }
 
     /* ── HERO ──────────────────────────────────────── */
     .hero {
@@ -235,9 +271,9 @@
     .hero__bg {
       position: absolute;
       inset: 0;
-      background-image: url('IMG_2156.JPG');
-      background-size: cover;
-      background-position: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       transform: scale(1.04);
       animation: hero-zoom 12s ease-out forwards;
     }
@@ -250,38 +286,10 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(to bottom,
-        rgba(11,11,9,.72) 0%,
-        rgba(11,11,9,.82) 50%,
-        rgba(11,11,9,.75) 100%);
+        rgba(11,11,9,.52) 0%,
+        rgba(11,11,9,.62) 50%,
+        rgba(11,11,9,.55) 100%);
     }
-
-    /* animated frame */
-    .hero__frame {
-      position: absolute;
-      inset: 48px;
-      pointer-events: none;
-    }
-    .hero__frame .f-top,
-    .hero__frame .f-bottom {
-      position: absolute; left: 0; right: 0;
-      height: 1px;
-      background: rgba(255,255,255,.2);
-      transform: scaleX(0);
-    }
-    .hero__frame .f-top    { top: 0;    transform-origin: left center;  animation: scale-h 1.2s var(--ease) .4s forwards; }
-    .hero__frame .f-bottom { bottom: 0; transform-origin: right center; animation: scale-h 1.2s var(--ease) .4s forwards; }
-    .hero__frame .f-left,
-    .hero__frame .f-right {
-      position: absolute; top: 0; bottom: 0;
-      width: 1px;
-      background: rgba(255,255,255,.2);
-      transform: scaleY(0);
-    }
-    .hero__frame .f-left  { left: 0;  transform-origin: center top;    animation: scale-v 1s var(--ease) 1.4s forwards; }
-    .hero__frame .f-right { right: 0; transform-origin: center bottom; animation: scale-v 1s var(--ease) 1.4s forwards; }
-
-    @keyframes scale-h { to { transform: scaleX(1); } }
-    @keyframes scale-v { to { transform: scaleY(1); } }
 
     .hero__content {
       position: relative;
@@ -293,8 +301,8 @@
     .hero__h1 {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: clamp(38px, 6vw, 88px);
-      line-height: 1.06;
+      font-size: clamp(18px, 2.2vw, 30px);
+      line-height: 1.2;
       letter-spacing: -.01em;
       color: var(--paper);
     }
@@ -326,20 +334,23 @@
     .hero-intro {
       background: var(--paper);
       padding: clamp(56px,8vw,112px) var(--gx);
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 64px;
-      align-items: start;
+      text-align: center;
+    }
+
+    .hero-intro__inner {
+      max-width: 760px;
+      margin: 0 auto;
     }
 
     .hero-intro__label {
+      display: block;
       font-family: var(--sans);
       font-size: 9px;
       font-weight: 400;
       letter-spacing: .26em;
       text-transform: uppercase;
       color: rgba(11,11,9,.3);
-      padding-top: 8px;
+      margin-bottom: 24px;
     }
 
     .hero-intro__text {
@@ -347,8 +358,7 @@
       font-weight: 300;
       line-height: 1.8;
       color: var(--ink);
-      max-width: 600px;
-      margin-bottom: 44px;
+      margin: 0 auto 44px;
     }
 
     /* ── BUTTONS ───────────────────────────────────── */
@@ -427,7 +437,7 @@
     .s      { padding: var(--gy) var(--gx); }
     .s--dk  { background: var(--ink);   color: var(--paper); }
     .s--lt  { background: var(--paper); color: var(--ink);   }
-    .s--st  { background: var(--stone); color: var(--ink);   }
+    .s--st  { background: var(--paper); color: var(--ink);   }
 
     .s__eye {
       display: block;
@@ -454,6 +464,7 @@
       gap: 0;
     }
     .philo__quote {
+      font-family: var(--serif);
       font-size: clamp(20px, 2.5vw, 38px);
       font-weight: 300;
       font-style: italic;
@@ -473,85 +484,236 @@
 
     /* ── SERVICES ──────────────────────────────────── */
     .svc__top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      margin-bottom: 64px;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 64px;
     }
     .svc__intro {
       font-size: 19px;
       font-weight: 300;
       line-height: 1.78;
       color: var(--ink);
+      margin-top: 24px;
     }
-    .svc__grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      border-top: 1px solid var(--dim);
+    .svc__circles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(20px, 4vw, 56px);
+      padding: 8px 0;
     }
-    .svc__item {
-      padding: 48px 0;
-      border-right: 1px solid var(--dim);
+    .svc__circle {
+      position: relative;
+      width: clamp(190px, 18vw, 260px);
+      height: clamp(190px, 18vw, 260px);
+      border-radius: 50%;
+      border: 1px solid var(--ink);
+      background: transparent;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 16px;
+      cursor: pointer;
+      font-family: var(--sans);
+      color: var(--ink);
+      transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease);
     }
-    .svc__item:first-child              { padding-right: 44px; }
-    .svc__item:not(:first-child)        { padding-left: 44px; }
-    .svc__item:last-child               { border-right: none; }
+    .svc__circle:hover,
+    .svc__circle.is-active {
+      background: var(--ink);
+      color: var(--paper);
+      transform: scale(1.05);
+    }
+    .svc__circle-num {
+      font-size: 9px;
+      letter-spacing: .2em;
+      opacity: .5;
+    }
+    .svc__circle-name {
+      font-family: var(--serif);
+      font-size: clamp(21px, 1.9vw, 27px);
+      font-weight: 400;
+      text-align: center;
+      line-height: 1.15;
+    }
+    .svc__circle-cta {
+      display: none;
+    }
+    .svc__foot {
+      text-align: center;
+      margin-top: 56px;
+    }
 
-    .svc__num {
+    .svc__overlay {
+      position: fixed;
+      inset: clamp(10px, 3vw, 32px);
+      z-index: 999;
+      border-radius: 18px;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .5s var(--ease), visibility 0s linear .5s;
+    }
+    .svc__overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity .5s var(--ease), visibility 0s linear 0s;
+    }
+    .svc__overlay-close {
+      position: absolute;
+      top: clamp(18px, 3vw, 40px);
+      right: clamp(18px, 4vw, 48px);
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(244,243,239,.4);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--paper);
+      font-size: 18px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+    }
+    .svc__overlay-close:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+    .svc__overlay-inner {
+      max-width: min(1040px, 90vw);
+      padding: 0 clamp(24px, 5vw, 64px);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .55s var(--ease) .1s, transform .55s var(--ease) .1s;
+    }
+    .svc__overlay.is-open .svc__overlay-inner { opacity: 1; transform: translateY(0); }
+    .svc__overlay-num {
       display: block;
       font-family: var(--sans);
       font-size: 9px;
       letter-spacing: .2em;
-      color: var(--ink);
-      margin-bottom: 28px;
+      color: var(--paper);
+      opacity: .55;
+      margin-bottom: 18px;
     }
-    .svc__name {
-      font-size: 23px;
-      font-weight: 400;
-      margin-bottom: 14px;
-    }
-    .svc__desc {
-      font-size: 19px;
+    .svc__overlay-name {
+      font-family: var(--serif);
       font-weight: 300;
-      line-height: 1.8;
-      color: var(--ink);
-      flex: 1;
+      font-size: clamp(28px, 4vw, 46px);
+      color: var(--paper);
+      margin-bottom: 22px;
+    }
+    .svc__overlay-text {
+      font-size: clamp(18px, 1.7vw, 22px);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--paper);
+      opacity: .88;
     }
 
-    /* small service image */
-    .svc__img {
-      margin-top: 28px;
-      overflow: hidden;
+    @media (prefers-reduced-motion: reduce) {
+      .svc__circle, .svc__overlay, .svc__overlay-inner, .svc__overlay-close { transition: none; }
     }
-    .svc__img img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      object-position: center;
-      filter: grayscale(25%);
-      transition: transform .6s var(--ease), filter .4s var(--ease);
+
+    /* ── PROCESS ───────────────────────────────────── */
+    .proc__grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      border-top: 1px solid rgba(244,243,239,.12);
     }
-    .svc__item:hover .svc__img img {
-      transform: scale(1.04);
-      filter: grayscale(0%);
+    .proc__item {
+      padding: 48px 0;
+      border-right: 1px solid rgba(244,243,239,.12);
     }
+    .proc__item:first-child       { padding-right: 32px; }
+    .proc__item:not(:first-child) { padding-left: 32px; padding-right: 32px; }
+    .proc__item:last-child        { border-right: none; padding-right: 0; }
+    .proc__num {
+      display: block;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: 40px;
+      color: rgba(244,243,239,.35);
+      margin-bottom: 24px;
+    }
+    .proc__name {
+      font-size: 21px;
+      font-weight: 400;
+      color: var(--paper);
+      margin-bottom: 14px;
+    }
+    .proc__desc {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(244,243,239,.75);
+    }
+
+    /* ── CASE STUDIES ──────────────────────────────── */
+    .case__grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1px;
+      background: var(--dim);
+      border: 1px solid var(--dim);
+    }
+    .case__item {
+      background: var(--paper);
+      padding: 44px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .case__client {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(11,11,9,.45);
+    }
+    .case__name {
+      font-family: var(--serif);
+      font-size: 26px;
+      font-weight: 400;
+      margin-top: -8px;
+    }
+    .case__row { display: flex; flex-direction: column; gap: 4px; }
+    .case__label {
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(11,11,9,.4);
+    }
+    .case__text {
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--ink);
+    }
+    .case__result {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid var(--dim);
+    }
+    .case__result .case__text { font-style: italic; }
 
     /* ── TEAM ──────────────────────────────────────── */
     .team__top {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: end;
       margin-bottom: 64px;
-    }
-    .team__sub {
-      font-size: 19px;
-      font-weight: 300;
-      line-height: 1.78;
-      color: var(--ink);
     }
     .team__grid {
       display: flex;
@@ -621,44 +783,10 @@
       color: var(--ink);
     }
 
-    /* ── CLIENTS ───────────────────────────────────── */
+    /* ── CASE STUDIES HEADER ───────────────────────── */
     .cli__head {
       text-align: center;
       margin-bottom: 72px;
-    }
-    .cli__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-top:  1px solid rgba(244,243,239,.18);
-      border-left: 1px solid rgba(244,243,239,.18);
-    }
-    .cli__cell {
-      border-right:  1px solid rgba(244,243,239,.18);
-      border-bottom: 1px solid rgba(244,243,239,.18);
-      padding: 64px 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-      text-align: center;
-      transition: background .3s var(--ease);
-    }
-    .cli__cell:hover { background: rgba(244,243,239,.04); }
-    .cli__cell-num {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: .22em;
-      color: rgba(244,243,239,.35);
-    }
-    .cli__cell-name {
-      font-family: var(--serif);
-      font-size: clamp(16px, 1.6vw, 22px);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--paper);
-      line-height: 1.3;
     }
 
     /* ── FAQ ───────────────────────────────────────── */
@@ -811,33 +939,33 @@
        RESPONSIVE — TABLET  ≤ 900px
     ═════════════════════════════════════════════════ */
     @media (max-width: 900px) {
-      /* hero */
-      .hero__frame { inset: 28px; }
-
-      /* hero intro */
-      .hero-intro { grid-template-columns: 1fr; gap: 28px; }
-      .hero-intro__label { display: none; }
+      /* nav — switch to burger earlier now that it carries 5 links + a longer CTA */
+      .nav__mid { display: none; }
+      .nav__ctas { display: none; }
+      .nav__burger { display: flex; }
 
       /* philosophy */
       .philo { grid-template-columns: 1fr; gap: 40px; }
       .philo__quote { padding-right: 0; border-right: none; padding-bottom: 40px; border-bottom: 1px solid rgba(244,243,239,.1); }
       .philo__body  { padding-left: 0; }
 
-      /* services — 2-col, 3rd card spans full width */
-      .svc__top { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
-      .svc__grid { grid-template-columns: 1fr 1fr; }
-      .svc__item:first-child       { padding-right: 32px; }
-      .svc__item:nth-child(2)      { padding-left: 32px; border-right: none; }
-      .svc__item:last-child        { grid-column: 1 / -1; border-right: none; padding-left: 0; padding-right: 0; border-top: 1px solid var(--dim); }
+      /* services — stacked rows, narrower label column */
+      .svc__top { margin-bottom: 48px; }
+      .svc__circle { width: 170px; height: 170px; }
+
+      /* process — 2-col grid */
+      .proc__grid { grid-template-columns: 1fr 1fr; }
+      .proc__item                   { border-right: 1px solid rgba(244,243,239,.12); border-bottom: 1px solid rgba(244,243,239,.12); padding: 36px 24px !important; }
+      .proc__item:nth-child(2n)     { border-right: none; }
+      .proc__item:nth-last-child(-n+2) { border-bottom: none; }
+
+      /* case studies — stacked */
+      .case__grid { grid-template-columns: 1fr; }
 
       /* team — stacked rows, photo on top */
-      .team__top  { grid-template-columns: 1fr; gap: 32px; margin-bottom: 48px; }
       .tc, .tc:nth-child(even) { flex-direction: column; align-items: flex-start; gap: 28px; padding: 40px 0; }
       .tc__img { flex: none; width: 100%; max-width: 360px; }
       .tc__text { max-width: 100%; }
-
-      /* clients */
-      .cli__grid { grid-template-columns: 1fr 1fr; }
 
       /* cta sub */
       .cta__sub { white-space: normal; max-width: 560px; }
@@ -856,8 +984,7 @@
       .nav__logo img { width: 36px; height: 36px; }
 
       /* hero */
-      .hero__frame { inset: 14px; }
-      .hero__h1 { font-size: clamp(28px, 8vw, 52px); }
+      .hero__h1 { font-size: clamp(16px, 5vw, 22px); }
 
       /* hero intro */
       .hero-intro__text { font-size: 16px; }
@@ -867,28 +994,43 @@
       .philo__quote { font-size: clamp(18px, 5vw, 30px); }
 
       /* services */
-      .svc__grid { grid-template-columns: 1fr; border-top: none; }
-      .svc__item {
+      .svc__circles { flex-direction: column; align-items: center; gap: 28px; }
+      .svc__circle { width: 150px; height: 150px; gap: 6px; }
+      .svc__circle-name { font-size: 18px; }
+      .svc__circle-cta {
+        display: block;
+        font-family: var(--sans);
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        opacity: .6;
+      }
+      .svc__overlay { inset: 0; border-radius: 0; }
+      .svc__overlay-inner { padding: 0 28px; }
+      .svc__overlay-name { font-size: 28px; }
+      .svc__overlay-text { font-size: 16px; }
+
+      /* process */
+      .proc__grid { grid-template-columns: 1fr; border-top: none; }
+      .proc__item {
         grid-column: auto !important;
         border-right: none !important;
+        border-bottom: none !important;
         padding-left: 0 !important;
         padding-right: 0 !important;
-        padding-top: 36px;
-        padding-bottom: 36px;
-        border-top: 1px solid var(--dim);
+        padding-top: 32px;
+        padding-bottom: 32px;
+        border-top: 1px solid rgba(244,243,239,.12);
       }
-      .svc__item:last-child { border-bottom: 1px solid var(--dim); }
-      .svc__img img { height: 130px; }
+      .proc__item:last-child { border-bottom: 1px solid rgba(244,243,239,.12) !important; }
 
       /* team */
       .tc { padding: 28px 0; }
       .tc__img { max-width: 100%; aspect-ratio: 3/4; }
 
-      /* clients */
+      /* case studies */
       .cli__head { text-align: left; }
-      .cli__grid { grid-template-columns: 1fr; }
-      .cli__cell { padding: 32px 20px; }
-      .cli__cell-name { font-size: 18px; }
 
       /* faq */
       .faq__item { padding: 20px 0; }
@@ -908,6 +1050,36 @@
 </head>
 <body>
 
+  <!-- ── INTRO LOADER ─────────────────────────────── -->
+  <div class="intro-loader" id="introLoader" aria-hidden="true">
+    <div class="intro-loader__inner">
+      <span class="intro-loader__word" style="--d:0">Strategy,</span>
+      <span class="intro-loader__word" style="--d:1">brand,</span>
+      <span class="intro-loader__word" style="--d:2">and</span>
+      <span class="intro-loader__word" style="--d:3">design</span>
+      <span class="intro-loader__word" style="--d:4">that</span>
+      <span class="intro-loader__word" style="--d:5">grow</span>
+      <span class="intro-loader__word" style="--d:6">the</span>
+      <span class="intro-loader__word" style="--d:7">business</span>
+      <span class="intro-loader__word" style="--d:8">— not just the look.</span>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var loader = document.getElementById('introLoader');
+      if (!loader || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      document.documentElement.style.overflow = 'hidden';
+      setTimeout(function () {
+        document.documentElement.style.overflow = '';
+      }, 5450);
+      loader.addEventListener('animationend', function (e) {
+        if (e.animationName === 'intro-loader-out') {
+          loader.style.display = 'none';
+        }
+      });
+    })();
+  </script>
+
   <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ── NAVIGATION ───────────────────────────────── -->
@@ -916,12 +1088,11 @@
       <img src="creative.png" alt="Creative Hub">
     </a>
     <div class="nav__mid">
-      <a href="/portfolio" class="nav__link">Portfolio</a>
-      <a href="/creative-hub-lab" class="nav__link">Creative hub LAB</a>
+      <a href="portfolio.html" class="nav__link">Portfolio</a>
+      <a href="creative-hub-lab.html" class="nav__link">Creative Hub Lab</a>
     </div>
     <div class="nav__ctas">
-      <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__cta">Text on WhatsApp</a>
-      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a call</a>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__cta">Book a Strategy Call →</a>
     </div>
     <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
       <span></span><span></span><span></span>
@@ -929,32 +1100,28 @@
   </nav>
 
   <div class="nav__mobile" id="navMobile">
-    <a href="/portfolio" class="nav__mobile-link">Portfolio</a>
-    <a href="/creative-hub-lab" class="nav__mobile-link">Creative hub LAB</a>
-    <a href="https://wa.link/g0i2bn" target="_blank" rel="noopener" class="nav__mobile-link">Text on WhatsApp</a>
-    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__mobile-link">Book a call</a>
+    <a href="portfolio.html" class="nav__mobile-link">Portfolio</a>
+    <a href="creative-hub-lab.html" class="nav__mobile-link">Creative Hub Lab</a>
+    <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="nav__mobile-link">Book a Strategy Call →</a>
   </div>
 
 
   <!-- ── HERO ─────────────────────────────────────── -->
   <section class="hero">
-    <div class="hero__bg"></div>
+    <video class="hero__bg" autoplay muted loop playsinline poster="IMG_2156.JPG">
+      <source src="trimmed-hero.mp4" type="video/mp4">
+    </video>
     <div class="hero__overlay"></div>
-    <div class="hero__frame">
-      <span class="f-top"></span>
-      <span class="f-bottom"></span>
-      <span class="f-left"></span>
-      <span class="f-right"></span>
-    </div>
     <div class="hero__content">
       <h1 class="hero__h1">
-        <span class="hero__word" style="--d:0">Brands</span>
-        <span class="hero__word" style="--d:1">and</span>
-        <span class="hero__word" style="--d:2">websites</span><br>
-        <span class="hero__word" style="--d:3">that</span>
-        <span class="hero__word" style="--d:4">feel</span>
-        <span class="hero__word" style="--d:5"><em>unmistakably</em></span><br>
-        <span class="hero__word" style="--d:6">yours.</span>
+        <span class="hero__word" style="--d:0">It</span>
+        <span class="hero__word" style="--d:1">looks</span>
+        <span class="hero__word" style="--d:2">like</span>
+        <span class="hero__word" style="--d:3"><em>you</em>.</span><br>
+        <span class="hero__word" style="--d:4">And</span>
+        <span class="hero__word" style="--d:5">it</span>
+        <span class="hero__word" style="--d:6">actually</span>
+        <span class="hero__word" style="--d:7">works.</span>
       </h1>
     </div>
   </section>
@@ -962,14 +1129,19 @@
 
   <!-- ── HERO INTRO ───────────────────────────────── -->
   <section class="hero-intro">
-    <span class="hero-intro__label">The Creative Hub</span>
-    <div>
+    <div class="hero-intro__inner">
+      <span class="hero-intro__label">The Creative Hub</span>
       <p class="hero-intro__text reveal">
-        Your brand is more than a look. It's an essence. We help founders, creators, and visionary businesses uncover what makes them truly distinct — and translate it into a digital presence that feels authentic, memorable, and deeply aligned.
+        The Creative Hub is a strategy-led studio for founders who want their brand, website, and ads working as one system — using the latest AI tools to optimize and strategize, without ever losing the artistic, human touch that makes you stand out and feel unique.
       </p>
-      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--outline-dk reveal">
-        Start your project <span>→</span>
-      </a>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+        <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--outline-dk reveal">
+          Book a Strategy Call <span>→</span>
+        </a>
+        <a href="#process" class="btn btn--outline-dk reveal">
+          See Our Process <span>↓</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -977,21 +1149,21 @@
   <!-- ── TICKER ───────────────────────────────────── -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker__track">
-      <span class="ticker__word">Brand Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Web Design</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Communication Strategy</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Photography</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Editorial Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Strategy</span><span class="ticker__dot">·</span>
       <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Website</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Ads &amp; Growth</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Positioning</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Conversion Design</span><span class="ticker__dot">·</span>
       <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Brand Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Web Design</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Communication Strategy</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Photography</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Editorial Design</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Strategy</span><span class="ticker__dot">·</span>
       <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Website</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Ads &amp; Growth</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Positioning</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
+      <span class="ticker__word">Conversion Design</span><span class="ticker__dot">·</span>
       <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
     </div>
   </div>
@@ -1002,49 +1174,113 @@
     <span class="s__eye">01 — Philosophy</span>
     <div class="philo reveal">
       <blockquote class="philo__quote">
-        "The most effective brands are not built by following trends. They are built by expressing something <em>genuine.</em>"
+        "Most agencies make you choose: a brand that feels like you, or a strategy that grows revenue. We don't think that's a real <em>choice.</em>"
       </blockquote>
       <p class="philo__body">
-        Our role is to help bring that essence into form — through thoughtful design, clear messaging, and a cohesive digital experience that reflects the depth and vision behind your work.
+        The work only holds up if it's both — designed with intention, and built to be measured.
       </p>
     </div>
   </section>
 
 
   <!-- ── SERVICES ─────────────────────────────────── -->
-  <section class="s s--lt">
+  <section class="s s--lt" id="services">
     <span class="s__eye">02 — Services</span>
     <div class="svc__top reveal">
-      <h2 class="s__h2">A curated suite<br>of creative <em>services.</em></h2>
-      <p class="svc__intro">Each one designed to work together — or stand alone. Whatever the scope, the process is always deeply intentional.</p>
+      <h2 class="s__h2">One system. Four aspects. Built to <em>compound.</em></h2>
+      <p class="svc__intro">Strategy sets the direction. Branding builds the trust. The website converts it. Ads scale it. Run separately, each piece is a cost. Run together, they're a growth engine.</p>
     </div>
-    <div class="svc__grid reveal">
+    <div class="svc__circles reveal">
 
-      <div class="svc__item">
-        <span class="svc__num">01</span>
-        <h3 class="svc__name">Brand Identity</h3>
-        <p class="svc__desc">Positioning, naming, visual identity, and messaging that expresses who you truly are.</p>
-        <div class="svc__img">
-          <img src="img/service-brand.jpg" alt="Brand Identity" loading="lazy" decoding="async">
-        </div>
+      <button class="svc__circle" type="button" aria-haspopup="dialog">
+        <span class="svc__circle-num">01</span>
+        <span class="svc__circle-name">Strategy</span>
+        <span class="svc__circle-cta">Read more</span>
+        <template>
+          <span data-num>01</span>
+          <span data-name>Strategy</span>
+          <span data-text>Strategy is the foundation. If you're building something everyone else already does, with no real differentiator, you're setting yourself up to fail — we see it over and over again. If you have an idea and you're open to strategizing it with us, we'll find your unique angle and make your brand actually shine. That's where things get interesting. Strategy is about being creative, smart, and efficient, all at the same time.</span>
+        </template>
+      </button>
+
+      <button class="svc__circle" type="button" aria-haspopup="dialog">
+        <span class="svc__circle-num">02</span>
+        <span class="svc__circle-name">Branding</span>
+        <span class="svc__circle-cta">Read more</span>
+        <template>
+          <span data-num>02</span>
+          <span data-name>Branding</span>
+          <span data-text>Branding isn't about the looks — it's the look inspired by the strategy: the intelligence behind what you actually offer, how you position yourself, and who you're talking to, done in a way that sets you up for success. If what you want is a logo and a name, we're not the right fit. If what you want is a system that makes you unique, lasts through time, creates real differentiation in the market, and actually generates money — this is for you.</span>
+        </template>
+      </button>
+
+      <button class="svc__circle" type="button" aria-haspopup="dialog">
+        <span class="svc__circle-num">03</span>
+        <span class="svc__circle-name">Website</span>
+        <span class="svc__circle-cta">Read more</span>
+        <template>
+          <span data-num>03</span>
+          <span data-name>Website</span>
+          <span data-text>Your website is your storefront. If you think you can do business without one, you're trying to save money that will cost you later in credibility. Why? Because people want to see that you take your business seriously enough to present yourself in a beautiful, cohesive way — one that tells your story, shows your expertise, and positions you as the expert. Someone asks if you have a website, and you send them a site built in Wix in 2015, or just your Instagram link? Most likely, they won't contact you back — because you're losing credibility.</span>
+        </template>
+      </button>
+
+      <button class="svc__circle" type="button" aria-haspopup="dialog">
+        <span class="svc__circle-num">04</span>
+        <span class="svc__circle-name">Ads &amp; Growth</span>
+        <span class="svc__circle-cta">Read more</span>
+        <template>
+          <span data-num>04</span>
+          <span data-name>Ads &amp; Growth</span>
+          <span data-text>In 2026, things are changing — even ads aren't done the way they used to be. We choose the strategy that works best for your desired results together, applying the latest AI advancements alongside lead capture and retention systems, while always making sure each step of the process stays deeply human. So no, we won't use AI-generated video that looks cheap, or bots to answer your messages — but we might use incredibly advanced AI agents from our business partners, and use AI to program the ads, so the results are 10x better.</span>
+        </template>
+      </button>
+
+    </div>
+
+    <div class="svc__overlay" id="svcOverlay">
+      <button class="svc__overlay-close" id="svcOverlayClose" type="button" aria-label="Close">✕</button>
+      <div class="svc__overlay-inner">
+        <span class="svc__overlay-num" id="svcOverlayNum"></span>
+        <h3 class="svc__overlay-name" id="svcOverlayName"></h3>
+        <p class="svc__overlay-text" id="svcOverlayText"></p>
+      </div>
+    </div>
+
+    <div class="svc__foot reveal">
+      <a href="#process" class="btn btn--outline-dk">See how the system works together <span>→</span></a>
+    </div>
+  </section>
+
+
+  <!-- ── PROCESS ──────────────────────────────────── -->
+  <section class="s s--dk" id="process">
+    <span class="s__eye">03 — Process</span>
+    <h2 class="s__h2 reveal" style="color:var(--paper); margin-bottom:56px;">How an engagement <em>runs.</em></h2>
+    <div class="proc__grid reveal">
+
+      <div class="proc__item">
+        <span class="proc__num">01</span>
+        <h3 class="proc__name">Discover</h3>
+        <p class="proc__desc">We start with your business, not a mood board. Market, competitors, numbers, and the gap between where you are and where you're worth being.</p>
       </div>
 
-      <div class="svc__item">
-        <span class="svc__num">02</span>
-        <h3 class="svc__name">Website Design</h3>
-        <p class="svc__desc">Custom websites that feel as distinctive as the brand behind them — built to convert and to last.</p>
-        <div class="svc__img">
-          <img src="img/service-web.jpg" alt="Website Design" loading="lazy" decoding="async">
-        </div>
+      <div class="proc__item">
+        <span class="proc__num">02</span>
+        <h3 class="proc__name">Strategize</h3>
+        <p class="proc__desc">A clear, written strategy — positioning, message, and growth plan — before any design work begins. Nothing gets built on a guess.</p>
       </div>
 
-      <div class="svc__item">
-        <span class="svc__num">03</span>
-        <h3 class="svc__name">Communication Strategy</h3>
-        <p class="svc__desc">Tone of voice, content direction, and storytelling that speaks directly to the people you want to reach.</p>
-        <div class="svc__img">
-          <img src="img/service-strategy.jpg" alt="Communication Strategy" loading="lazy" decoding="async">
-        </div>
+      <div class="proc__item">
+        <span class="proc__num">03</span>
+        <h3 class="proc__name">Build</h3>
+        <p class="proc__desc">Brand identity, website, and ad creative, built from the strategy — not from trends. Every piece is made to work together.</p>
+      </div>
+
+      <div class="proc__item">
+        <span class="proc__num">04</span>
+        <h3 class="proc__name">Scale</h3>
+        <p class="proc__desc">Ads go live against a system built to convert, and we optimize against real numbers — not opinions.</p>
       </div>
 
     </div>
@@ -1053,10 +1289,9 @@
 
   <!-- ── TEAM ─────────────────────────────────────── -->
   <section class="s s--st" id="team">
-    <span class="s__eye">03 — Meet the team</span>
+    <span class="s__eye">04 — Meet the team</span>
     <div class="team__top reveal">
-      <h2 class="s__h2">The people<br>behind the <em>work.</em></h2>
-      <p class="team__sub">Every project is highly personalised. We start from the inside out — uncovering what is genuinely distinctive about you, then shaping it into something visible, coherent, and compelling.</p>
+      <h2 class="s__h2">The people behind the <em>team.</em></h2>
     </div>
 
     <div class="team__grid">
@@ -1080,9 +1315,9 @@
           <img src="img/team-debora.jpg" alt="Debora Padellaro" loading="lazy" decoding="async">
         </div>
         <div class="tc__text">
-          <p class="tc__role">Photography · Social Media</p>
+          <p class="tc__role">Social Media Strategist &amp; Brand Expert</p>
           <h3 class="tc__name">Debora Padellaro</h3>
-          <p class="tc__bio">She combines technical expertise with a refined creative eye to give life to timeless photography that feels artistic, authentic, and deeply aligned with the essence of each brand. Beginning her career in Tulum, she has worked with clients across fashion, restaurants, real estate, personal brands, and product-based businesses. Her photographic eye has a unique way of making you fall in love with yourself.</p>
+          <p class="tc__bio">She combines strategic thinking with a refined creative eye to build social media presences and brand systems that feel authentic and deeply aligned with the essence of each brand. Beginning her career in Tulum, she has worked with clients across fashion, restaurants, real estate, personal brands, and product-based businesses. Her strategic eye has a unique way of helping a brand find its voice and connect with the right audience.</p>
         </div>
         <span class="tc__line"></span>
       </div>
@@ -1104,67 +1339,108 @@
   </section>
 
 
-  <!-- ── WHO I WORK WITH ───────────────────────────── -->
-  <section class="s s--dk">
-    <div class="cli__head reveal">
-      <span class="s__eye" style="margin-bottom:40px;">04 — Who we work with</span>
-      <h2 class="s__h2" style="color:var(--paper);">
-        We work with people building<br>something <span class="word-reveal"><em>meaningful.</em></span>
+  <!-- ── CASE STUDIES ─────────────────────────────── -->
+  <section class="s s--st">
+    <div class="cli__head reveal" style="margin-bottom:56px;">
+      <span class="s__eye" style="color:var(--ink);">05 — Case studies</span>
+      <h2 class="s__h2" style="color:var(--ink);">
+        The system, <em>in practice.</em>
       </h2>
     </div>
-    <div class="cli__grid reveal">
-      <div class="cli__cell">
-        <span class="cli__cell-num">01</span>
-        <span class="cli__cell-name">Personal brands</span>
+    <div class="case__grid reveal">
+
+      <div class="case__item">
+        <div>
+          <span class="case__client">Healthy Restaurant · Tulum</span>
+          <h3 class="case__name">Olivo</h3>
+        </div>
+        <div class="case__row">
+          <span class="case__label">The problem</span>
+          <p class="case__text">Opening in a competitive market around a concept — food as medicine — with no brand yet built to carry it.</p>
+        </div>
+        <div class="case__row">
+          <span class="case__label">What we did</span>
+          <p class="case__text">Brand identity, visual system, and Instagram content strategy, plus hands-on guidance on how the physical space should look and feel.</p>
+        </div>
+        <div class="case__row case__result">
+          <span class="case__label">The result</span>
+          <p class="case__text">Launched with a cohesive identity, content strategy, and space direction built around what guests needed to feel — not a preset restaurant template.</p>
+        </div>
       </div>
-      <div class="cli__cell">
-        <span class="cli__cell-num">02</span>
-        <span class="cli__cell-name">Conscious businesses</span>
+
+      <div class="case__item">
+        <div>
+          <span class="case__client">Boutique Video Studio · Santa Monica</span>
+          <h3 class="case__name">JLS Video Agency</h3>
+        </div>
+        <div class="case__row">
+          <span class="case__label">The problem</span>
+          <p class="case__text">A respected production studio whose website didn't reflect the caliber of its work or its "Content with the Soul of Cinema" positioning.</p>
+        </div>
+        <div class="case__row">
+          <span class="case__label">What we did</span>
+          <p class="case__text">Full website rebrand and restructure, built around their existing case studies, footage, and photography.</p>
+        </div>
+        <div class="case__row case__result">
+          <span class="case__label">The result</span>
+          <p class="case__text">A site that finally does justice to the work — live at <a href="https://www.jlsvideoagency.com/" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">jlsvideoagency.com</a>.</p>
+        </div>
       </div>
-      <div class="cli__cell">
-        <span class="cli__cell-num">03</span>
-        <span class="cli__cell-name">Luxury hospitality</span>
+
+      <div class="case__item">
+        <div>
+          <span class="case__client">Real Estate · Mexico City</span>
+          <h3 class="case__name">Galanta</h3>
+        </div>
+        <div class="case__row">
+          <span class="case__label">The problem</span>
+          <p class="case__text">A new real estate company needed to earn trust in a market where credibility is everything, with no existing brand to lean on.</p>
+        </div>
+        <div class="case__row">
+          <span class="case__label">What we did</span>
+          <p class="case__text">Visual identity, brand development, and website design — one connected system from first impression to first inquiry.</p>
+        </div>
+        <div class="case__row case__result">
+          <span class="case__label">The result</span>
+          <p class="case__text">Launched with a cohesive identity built to read as established and trustworthy from day one.</p>
+        </div>
       </div>
-      <div class="cli__cell">
-        <span class="cli__cell-num">04</span>
-        <span class="cli__cell-name">Real estate &amp; regenerative development</span>
-      </div>
-      <div class="cli__cell">
-        <span class="cli__cell-num">05</span>
-        <span class="cli__cell-name">Retreats &amp; wellness</span>
-      </div>
-      <div class="cli__cell">
-        <span class="cli__cell-num">06</span>
-        <span class="cli__cell-name">Purpose-driven ventures</span>
-      </div>
+
+    </div>
+    <div class="svc__foot reveal">
+      <a href="portfolio.html" class="btn btn--outline-dk">See the full body of work <span>→</span></a>
     </div>
   </section>
 
 
   <!-- ── FAQ ──────────────────────────────────────── -->
   <section class="s s--lt s--faq">
-    <span class="s__eye">05 — FAQ</span>
+    <span class="s__eye">06 — FAQ</span>
     <h2 class="s__h2" style="margin-bottom:48px;">Questions, <em>answered.</em></h2>
     <div class="faq__list reveal">
       <details class="faq__item">
-        <summary><span class="faq__q">Are you a creative agency for branding and web design?</span><span class="faq__icon">+</span></summary>
-        <p class="faq__a">Yes — The Creative Hub is a creative agency specialising in brand identity, website design, and communication strategy. We work end-to-end: positioning, naming, visual identity, and full website development.</p>
+        <summary><span class="faq__q">How is this different from a typical branding studio?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">Most studios stop at the look. We build the strategy and the growth engine around it — brand, website, and ads working from the same plan, measured against the same numbers.</p>
       </details>
       <details class="faq__item">
-        <summary><span class="faq__q">Do you design wellness websites for retreats and conscious brands?</span><span class="faq__icon">+</span></summary>
-        <p class="faq__a">Yes. We work closely with retreats, wellness practitioners, and conscious businesses to build wellness websites that feel calm, credible, and aligned with their mission — alongside personal brands, hospitality, and regenerative real estate ventures.</p>
+        <summary><span class="faq__q">How is this different from a typical ad agency?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">Most ad agencies start with spend. We start with positioning. Ads perform better — and cost less — when the message and the brand behind them are already right.</p>
       </details>
       <details class="faq__item">
-        <summary><span class="faq__q">What does "conscious branding" mean, and do you offer it?</span><span class="faq__icon">+</span></summary>
-        <p class="faq__a">Conscious branding means building a brand identity from genuine values and purpose, rather than trends. It's the foundation of how we work — every project starts by uncovering what's authentically distinctive about a founder or business before any visual design begins.</p>
+        <summary><span class="faq__q">Where does AI actually come into your process?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">We use it to move faster — research, testing, iteration. Every strategic and creative decision is still made by a person. AI shortens the timeline; it doesn't set the direction.</p>
       </details>
       <details class="faq__item">
-        <summary><span class="faq__q">Can you build a purpose-driven website for my business?</span><span class="faq__icon">+</span></summary>
-        <p class="faq__a">Yes. Purpose-driven website design is one of our core focuses — we build custom websites for founders and visionary businesses that need their site to reflect a deeper mission, not just sell a service.</p>
+        <summary><span class="faq__q">How soon do we see results?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">It depends on which pieces of the system you're starting with. Strategy and brand foundations come first, and we set clear milestones together before any work begins — so you always know what's next and when to expect it.</p>
       </details>
       <details class="faq__item">
-        <summary><span class="faq__q">Do you offer website development as a standalone service?</span><span class="faq__icon">+</span></summary>
-        <p class="faq__a">Yes — website design and development can be booked on its own or combined with brand identity and communication strategy, whatever your project needs.</p>
+        <summary><span class="faq__q">Do you work with businesses outside of hospitality, wellness, and real estate?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">Our strongest work is with founders and businesses in hospitality, wellness, real estate, and personal or purpose-driven brands — industries where trust and taste directly affect the bottom line. If that's not quite you, book a call and we'll tell you honestly whether we're a fit.</p>
+      </details>
+      <details class="faq__item">
+        <summary><span class="faq__q">What's the investment?</span><span class="faq__icon">+</span></summary>
+        <p class="faq__a">It depends on which pieces of the system you need — strategy, brand, website, ads, or all four. Book a call and we'll give you a clear quote. Please note that investment starts from $1,000 USD for our most basic packages — we don't build "a logo only" or just a one-page landing page. If you don't have the budget yet but still want to take the right steps to build your business, consider our <a href="creative-hub-lab.html" style="text-decoration:underline; text-underline-offset:3px;">online course</a>, which teaches you step by step how to create everything you need.</p>
       </details>
     </div>
   </section>
@@ -1176,42 +1452,50 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Are you a creative agency for branding and web design?",
+        "name": "How is this different from a typical branding studio?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — The Creative Hub is a creative agency specialising in brand identity, website design, and communication strategy. We work end-to-end: positioning, naming, visual identity, and full website development."
+          "text": "Most studios stop at the look. We build the strategy and the growth engine around it — brand, website, and ads working from the same plan, measured against the same numbers."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you design wellness websites for retreats and conscious brands?",
+        "name": "How is this different from a typical ad agency?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. We work closely with retreats, wellness practitioners, and conscious businesses to build wellness websites that feel calm, credible, and aligned with their mission — alongside personal brands, hospitality, and regenerative real estate ventures."
+          "text": "Most ad agencies start with spend. We start with positioning. Ads perform better — and cost less — when the message and the brand behind them are already right."
         }
       },
       {
         "@type": "Question",
-        "name": "What does conscious branding mean, and do you offer it?",
+        "name": "Where does AI actually come into your process?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Conscious branding means building a brand identity from genuine values and purpose, rather than trends. It's the foundation of how we work — every project starts by uncovering what's authentically distinctive about a founder or business before any visual design begins."
+          "text": "We use it to move faster — research, testing, iteration. Every strategic and creative decision is still made by a person. AI shortens the timeline; it doesn't set the direction."
         }
       },
       {
         "@type": "Question",
-        "name": "Can you build a purpose-driven website for my business?",
+        "name": "How soon do we see results?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Purpose-driven website design is one of our core focuses — we build custom websites for founders and visionary businesses that need their site to reflect a deeper mission, not just sell a service."
+          "text": "It depends on which pieces of the system you're starting with. Strategy and brand foundations come first, and we set clear milestones together before any work begins."
         }
       },
       {
         "@type": "Question",
-        "name": "Do you offer website development as a standalone service?",
+        "name": "Do you work with businesses outside of hospitality, wellness, and real estate?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes — website design and development can be booked on its own or combined with brand identity and communication strategy, whatever your project needs."
+          "text": "Our strongest work is with founders and businesses in hospitality, wellness, real estate, and personal or purpose-driven brands. If that's not quite you, book a call and we'll tell you honestly whether we're a fit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What's the investment?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It depends on which pieces of the system you need — strategy, brand, website, ads, or all four. Book a call and we'll give you a clear quote. Investment starts from $1,000 USD for our most basic packages. If you don't have the budget yet, consider our online course, which teaches you step by step how to build everything you need."
         }
       }
     ]
@@ -1220,17 +1504,17 @@
 
 
   <!-- ── CTA ──────────────────────────────────────── -->
-  <section class="cta">
+  <section class="cta" id="contact">
     <span class="cta__eye">Open to collaborations</span>
     <h2 class="cta__h2 reveal">
-      It's time to bring your<br><em>vision to life.</em>
+      Ready to build the<br><em>system,</em> not just the look?
     </h2>
     <p class="cta__sub reveal">
-      Let's create a brand and digital presence that feels unmistakably yours.
+      One call to see if there's a fit — no pitch deck, no pressure.
     </p>
     <div class="cta__btns reveal">
-      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--solid-lt">Let's talk <span>→</span></a>
-      <a href="/portfolio" class="btn btn--ghost-lt">View our work <span>→</span></a>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--solid-lt">Book a Strategy Call <span>→</span></a>
+      <a href="portfolio.html" class="btn btn--ghost-lt">View our work <span>→</span></a>
     </div>
     <p class="cta__rush reveal">
       Check out our listing on <a href="https://www.designrush.com/agency/logo-branding" target="_blank" rel="noopener">DesignRush</a>
@@ -1244,9 +1528,12 @@
       <img src="creative.png" alt="Creative Hub">
     </a>
     <div class="ft__links">
-      <a href="/portfolio" class="ft__link">Portfolio</a>
-      <a href="#team" class="ft__link">Team</a>
-      <a href="mailto:emanuelacreativehub@gmail.com" class="ft__link">Contact</a>
+      <a href="portfolio.html" class="ft__link">Work</a>
+      <a href="#services" class="ft__link">Services</a>
+      <a href="#process" class="ft__link">Process</a>
+      <a href="#team" class="ft__link">About</a>
+      <a href="#contact" class="ft__link">Contact</a>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="ft__link">Book a Call</a>
     </div>
     <p class="ft__copy">© 2025 The Creative Hub</p>
   </footer>
@@ -1282,10 +1569,40 @@
     window.addEventListener('mousemove', e => {
       cursorDot.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
     });
-    document.querySelectorAll('a, button, summary').forEach(el => {
+    document.querySelectorAll('a, button, summary, .svc__circle').forEach(el => {
       el.addEventListener('mouseenter', () => cursorDot.classList.add('is-active'));
       el.addEventListener('mouseleave', () => cursorDot.classList.remove('is-active'));
     });
+  </script>
+
+  <script>
+    const svcOverlay = document.getElementById('svcOverlay');
+    const svcOverlayNum = document.getElementById('svcOverlayNum');
+    const svcOverlayName = document.getElementById('svcOverlayName');
+    const svcOverlayText = document.getElementById('svcOverlayText');
+    const svcCircles = document.querySelectorAll('.svc__circle');
+
+    function openSvcPanel(circle) {
+      const data = circle.querySelector('template').content;
+      svcOverlayNum.textContent = data.querySelector('[data-num]').textContent;
+      svcOverlayName.textContent = data.querySelector('[data-name]').textContent;
+      svcOverlayText.textContent = data.querySelector('[data-text]').textContent;
+      svcCircles.forEach(c => c.classList.remove('is-active'));
+      circle.classList.add('is-active');
+      svcOverlay.classList.add('is-open');
+    }
+    function closeSvcPanel() {
+      svcOverlay.classList.remove('is-open');
+      svcCircles.forEach(c => c.classList.remove('is-active'));
+    }
+
+    svcCircles.forEach(circle => {
+      circle.addEventListener('mouseenter', () => openSvcPanel(circle));
+      circle.addEventListener('click', () => openSvcPanel(circle));
+    });
+    document.getElementById('svcOverlayClose').addEventListener('click', closeSvcPanel);
+    svcOverlay.addEventListener('click', e => { if (e.target === svcOverlay) closeSvcPanel(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSvcPanel(); });
   </script>
 
   <script defer src="/_vercel/insights/script.js"></script>
