@@ -519,6 +519,7 @@
       gap: 10px;
       padding: 0 16px;
       cursor: pointer;
+      touch-action: manipulation;
       font-family: var(--sans);
       color: var(--ink);
       transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease);
@@ -529,20 +530,17 @@
       color: var(--paper);
       transform: scale(1.05);
     }
-    .svc__circle-num {
-      font-size: 9px;
-      letter-spacing: .2em;
-      opacity: .5;
-    }
     .svc__circle-name {
       font-family: var(--serif);
       font-size: clamp(21px, 1.9vw, 27px);
       font-weight: 400;
       text-align: center;
       line-height: 1.15;
+      pointer-events: none;
     }
     .svc__circle-cta {
       display: none;
+      pointer-events: none;
     }
     .svc__foot {
       text-align: center;
@@ -659,57 +657,6 @@
       line-height: 1.75;
       color: rgba(244,243,239,.75);
     }
-
-    /* ── CASE STUDIES ──────────────────────────────── */
-    .case__grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 1px;
-      background: var(--dim);
-      border: 1px solid var(--dim);
-    }
-    .case__item {
-      background: var(--paper);
-      padding: 44px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-    .case__client {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: rgba(11,11,9,.45);
-    }
-    .case__name {
-      font-family: var(--serif);
-      font-size: 26px;
-      font-weight: 400;
-      margin-top: -8px;
-    }
-    .case__row { display: flex; flex-direction: column; gap: 4px; }
-    .case__label {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 500;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: rgba(11,11,9,.4);
-    }
-    .case__text {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.65;
-      color: var(--ink);
-    }
-    .case__result {
-      margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid var(--dim);
-    }
-    .case__result .case__text { font-style: italic; }
 
     /* ── TEAM ──────────────────────────────────────── */
     .team__top {
@@ -959,9 +906,6 @@
       .proc__item:nth-child(2n)     { border-right: none; }
       .proc__item:nth-last-child(-n+2) { border-bottom: none; }
 
-      /* case studies — stacked */
-      .case__grid { grid-template-columns: 1fr; }
-
       /* team — stacked rows, photo on top */
       .tc, .tc:nth-child(even) { flex-direction: column; align-items: flex-start; gap: 28px; padding: 40px 0; }
       .tc__img { flex: none; width: 100%; max-width: 360px; }
@@ -995,12 +939,13 @@
 
       /* services */
       .svc__circles { flex-direction: column; align-items: center; gap: 28px; }
-      .svc__circle { width: 150px; height: 150px; gap: 6px; }
-      .svc__circle-name { font-size: 18px; }
+      .svc__circle { width: 160px; height: 160px; gap: 16px; }
+      .svc__circle-name { font-size: 19px; }
       .svc__circle-cta {
         display: block;
+        margin-top: 4px;
         font-family: var(--sans);
-        font-size: 10px;
+        font-size: 11px;
         font-weight: 600;
         letter-spacing: .14em;
         text-transform: uppercase;
@@ -1193,7 +1138,6 @@
     <div class="svc__circles reveal">
 
       <button class="svc__circle" type="button" aria-haspopup="dialog">
-        <span class="svc__circle-num">01</span>
         <span class="svc__circle-name">Strategy</span>
         <span class="svc__circle-cta">Read more</span>
         <template>
@@ -1204,7 +1148,6 @@
       </button>
 
       <button class="svc__circle" type="button" aria-haspopup="dialog">
-        <span class="svc__circle-num">02</span>
         <span class="svc__circle-name">Branding</span>
         <span class="svc__circle-cta">Read more</span>
         <template>
@@ -1215,7 +1158,6 @@
       </button>
 
       <button class="svc__circle" type="button" aria-haspopup="dialog">
-        <span class="svc__circle-num">03</span>
         <span class="svc__circle-name">Website</span>
         <span class="svc__circle-cta">Read more</span>
         <template>
@@ -1226,7 +1168,6 @@
       </button>
 
       <button class="svc__circle" type="button" aria-haspopup="dialog">
-        <span class="svc__circle-num">04</span>
         <span class="svc__circle-name">Ads &amp; Growth</span>
         <span class="svc__circle-cta">Read more</span>
         <template>
@@ -1339,76 +1280,16 @@
   </section>
 
 
-  <!-- ── CASE STUDIES ─────────────────────────────── -->
+  <!-- ── PORTFOLIO CTA ────────────────────────────── -->
   <section class="s s--st">
-    <div class="cli__head reveal" style="margin-bottom:56px;">
-      <span class="s__eye" style="color:var(--ink);">05 — Case studies</span>
+    <div class="cli__head reveal">
+      <span class="s__eye" style="color:var(--ink);">05 — Portfolio</span>
       <h2 class="s__h2" style="color:var(--ink);">
         The system, <em>in practice.</em>
       </h2>
     </div>
-    <div class="case__grid reveal">
-
-      <div class="case__item">
-        <div>
-          <span class="case__client">Healthy Restaurant · Tulum</span>
-          <h3 class="case__name">Olivo</h3>
-        </div>
-        <div class="case__row">
-          <span class="case__label">The problem</span>
-          <p class="case__text">Opening in a competitive market around a concept — food as medicine — with no brand yet built to carry it.</p>
-        </div>
-        <div class="case__row">
-          <span class="case__label">What we did</span>
-          <p class="case__text">Brand identity, visual system, and Instagram content strategy, plus hands-on guidance on how the physical space should look and feel.</p>
-        </div>
-        <div class="case__row case__result">
-          <span class="case__label">The result</span>
-          <p class="case__text">Launched with a cohesive identity, content strategy, and space direction built around what guests needed to feel — not a preset restaurant template.</p>
-        </div>
-      </div>
-
-      <div class="case__item">
-        <div>
-          <span class="case__client">Boutique Video Studio · Santa Monica</span>
-          <h3 class="case__name">JLS Video Agency</h3>
-        </div>
-        <div class="case__row">
-          <span class="case__label">The problem</span>
-          <p class="case__text">A respected production studio whose website didn't reflect the caliber of its work or its "Content with the Soul of Cinema" positioning.</p>
-        </div>
-        <div class="case__row">
-          <span class="case__label">What we did</span>
-          <p class="case__text">Full website rebrand and restructure, built around their existing case studies, footage, and photography.</p>
-        </div>
-        <div class="case__row case__result">
-          <span class="case__label">The result</span>
-          <p class="case__text">A site that finally does justice to the work — live at <a href="https://www.jlsvideoagency.com/" target="_blank" rel="noopener" style="text-decoration:underline; text-underline-offset:3px;">jlsvideoagency.com</a>.</p>
-        </div>
-      </div>
-
-      <div class="case__item">
-        <div>
-          <span class="case__client">Real Estate · Mexico City</span>
-          <h3 class="case__name">Galanta</h3>
-        </div>
-        <div class="case__row">
-          <span class="case__label">The problem</span>
-          <p class="case__text">A new real estate company needed to earn trust in a market where credibility is everything, with no existing brand to lean on.</p>
-        </div>
-        <div class="case__row">
-          <span class="case__label">What we did</span>
-          <p class="case__text">Visual identity, brand development, and website design — one connected system from first impression to first inquiry.</p>
-        </div>
-        <div class="case__row case__result">
-          <span class="case__label">The result</span>
-          <p class="case__text">Launched with a cohesive identity built to read as established and trustworthy from day one.</p>
-        </div>
-      </div>
-
-    </div>
     <div class="svc__foot reveal">
-      <a href="portfolio.html" class="btn btn--outline-dk">See the full body of work <span>→</span></a>
+      <a href="portfolio.html" class="btn btn--outline-dk">Check our portfolio <span>→</span></a>
     </div>
   </section>
 
