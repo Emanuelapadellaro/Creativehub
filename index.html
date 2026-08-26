@@ -342,17 +342,6 @@
       margin: 0 auto;
     }
 
-    .hero-intro__label {
-      display: block;
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: .26em;
-      text-transform: uppercase;
-      color: rgba(11,11,9,.3);
-      margin-bottom: 24px;
-    }
-
     .hero-intro__text {
       font-size: 19px;
       font-weight: 300;
@@ -399,55 +388,11 @@
     }
     .btn--outline-dk:hover { border-color: var(--ink); }
 
-    /* ── TICKER ────────────────────────────────────── */
-    .ticker {
-      overflow: hidden;
-      background: var(--ink);
-      border-top: 1px solid rgba(244,243,239,.06);
-      border-bottom: 1px solid rgba(244,243,239,.06);
-      padding: 18px 0;
-    }
-    .ticker__track {
-      display: flex;
-      white-space: nowrap;
-      animation: scroll-left 28s linear infinite;
-    }
-    .ticker__word {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 300;
-      letter-spacing: .30em;
-      text-transform: uppercase;
-      color: rgba(244,243,239,.2);
-      padding: 0 40px;
-      flex-shrink: 0;
-    }
-    .ticker__dot {
-      font-size: 5px;
-      color: rgba(244,243,239,.1);
-      align-self: center;
-      flex-shrink: 0;
-    }
-    @keyframes scroll-left {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
-
     /* ── SECTIONS ──────────────────────────────────── */
     .s      { padding: var(--gy) var(--gx); }
     .s--dk  { background: var(--ink);   color: var(--paper); }
     .s--lt  { background: var(--paper); color: var(--ink);   }
     .s--st  { background: var(--paper); color: var(--ink);   }
-
-    .s__eye {
-      display: block;
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: .26em;
-      text-transform: uppercase;
-      margin-bottom: 64px;
-    }
 
     .s__h2 {
       font-family: var(--serif);
@@ -506,23 +451,46 @@
       padding: 8px 0;
     }
     .svc__circle {
+      --r: clamp(95px, 9vw, 130px);
       position: relative;
-      width: clamp(190px, 18vw, 260px);
-      height: clamp(190px, 18vw, 260px);
+      width: calc(var(--r) * 2);
+      height: calc(var(--r) * 2);
       border-radius: 50%;
       border: 1px solid var(--ink);
       background: transparent;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 0 16px;
+      padding: 0 14px;
       cursor: pointer;
       touch-action: manipulation;
       font-family: var(--sans);
       color: var(--ink);
       transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease);
+    }
+    .svc__circle::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 7px;
+      height: 7px;
+      margin: -3.5px 0 0 -3.5px;
+      border-radius: 50%;
+      background: var(--ink);
+      box-shadow: 0 0 8px 1px var(--ink);
+      transform-origin: 3.5px calc(var(--r) + 3.5px);
+      animation: svcOrbit 9s linear infinite;
+      pointer-events: none;
+      opacity: .85;
+      transition: opacity .4s var(--ease);
+    }
+    .svc__circle:hover::after,
+    .svc__circle.is-active::after {
+      opacity: 0;
+    }
+    @keyframes svcOrbit {
+      to { transform: rotate(360deg); }
     }
     .svc__circle:hover,
     .svc__circle.is-active {
@@ -530,16 +498,32 @@
       color: var(--paper);
       transform: scale(1.05);
     }
+    .svc__circle:hover .svc__circle-cta,
+    .svc__circle.is-active .svc__circle-cta {
+      color: var(--paper);
+    }
     .svc__circle-name {
       font-family: var(--serif);
-      font-size: clamp(21px, 1.9vw, 27px);
-      font-weight: 400;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.02;
+      max-width: 76%;
       text-align: center;
-      line-height: 1.15;
       pointer-events: none;
     }
     .svc__circle-cta {
-      display: none;
+      position: absolute;
+      left: 50%;
+      bottom: clamp(22px, 3vw, 32px);
+      transform: translateX(-50%);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
       pointer-events: none;
     }
     .svc__foot {
@@ -621,6 +605,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .svc__circle, .svc__overlay, .svc__overlay-inner, .svc__overlay-close { transition: none; }
+      .svc__circle::after { animation: none; }
     }
 
     /* ── PROCESS ───────────────────────────────────── */
@@ -788,15 +773,6 @@
       background: var(--ink);
       text-align: center;
     }
-    .cta__eye {
-      display: block;
-      font-family: var(--sans);
-      font-size: 9px;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--paper);
-      margin-bottom: 44px;
-    }
     .cta__h2 {
       font-family: var(--serif);
       font-weight: 300;
@@ -804,17 +780,9 @@
       line-height: 1.1;
       color: var(--paper);
       max-width: 680px;
-      margin: 0 auto 28px;
+      margin: 0 auto 56px;
     }
     .cta__h2 em { font-style: italic; }
-    .cta__sub {
-      font-size: 19px;
-      font-weight: 300;
-      line-height: 1.6;
-      color: var(--paper);
-      white-space: nowrap;
-      margin: 0 auto 52px;
-    }
     .cta__btns {
       display: flex;
       gap: 16px;
@@ -898,7 +866,7 @@
 
       /* services — stacked rows, narrower label column */
       .svc__top { margin-bottom: 48px; }
-      .svc__circle { width: 170px; height: 170px; }
+      .svc__circle { --r: 85px; }
 
       /* process — 2-col grid */
       .proc__grid { grid-template-columns: 1fr 1fr; }
@@ -910,9 +878,6 @@
       .tc, .tc:nth-child(even) { flex-direction: column; align-items: flex-start; gap: 28px; padding: 40px 0; }
       .tc__img { flex: none; width: 100%; max-width: 360px; }
       .tc__text { max-width: 100%; }
-
-      /* cta sub */
-      .cta__sub { white-space: normal; max-width: 560px; }
     }
 
     /* ════════════════════════════════════════════════
@@ -939,18 +904,9 @@
 
       /* services */
       .svc__circles { flex-direction: column; align-items: center; gap: 28px; }
-      .svc__circle { width: 160px; height: 160px; gap: 16px; }
-      .svc__circle-name { font-size: 19px; }
-      .svc__circle-cta {
-        display: block;
-        margin-top: 4px;
-        font-family: var(--sans);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: .14em;
-        text-transform: uppercase;
-        opacity: .6;
-      }
+      .svc__circle { --r: 80px; }
+      .svc__circle-name { font-size: 24px; }
+      .svc__circle-cta { font-size: 11px; bottom: 20px; }
       .svc__overlay { inset: 0; border-radius: 0; }
       .svc__overlay-inner { padding: 0 28px; }
       .svc__overlay-name { font-size: 28px; }
@@ -983,7 +939,6 @@
 
       /* cta */
       .cta__h2  { font-size: clamp(26px, 7vw, 52px); }
-      .cta__sub { white-space: normal; max-width: 100%; }
       .cta__btns { flex-direction: column; align-items: center; }
 
       /* footer */
@@ -1075,7 +1030,6 @@
   <!-- ── HERO INTRO ───────────────────────────────── -->
   <section class="hero-intro">
     <div class="hero-intro__inner">
-      <span class="hero-intro__label">The Creative Hub</span>
       <p class="hero-intro__text reveal">
         The Creative Hub is a strategy-led studio for founders who want their brand, website, and ads working as one system — using the latest AI tools to optimize and strategize, without ever losing the artistic, human touch that makes you stand out and feel unique.
       </p>
@@ -1091,32 +1045,8 @@
   </section>
 
 
-  <!-- ── TICKER ───────────────────────────────────── -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker__track">
-      <span class="ticker__word">Strategy</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Website</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Ads &amp; Growth</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Positioning</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Conversion Design</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Strategy</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Branding</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Website</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Ads &amp; Growth</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Positioning</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Visual Identity</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Conversion Design</span><span class="ticker__dot">·</span>
-      <span class="ticker__word">Naming</span><span class="ticker__dot">·</span>
-    </div>
-  </div>
-
-
   <!-- ── PHILOSOPHY ───────────────────────────────── -->
   <section class="s s--dk">
-    <span class="s__eye">01 — Philosophy</span>
     <div class="philo reveal">
       <blockquote class="philo__quote">
         "Most agencies make you choose: a brand that feels like you, or a strategy that grows revenue. We don't think that's a real <em>choice.</em>"
@@ -1130,7 +1060,6 @@
 
   <!-- ── SERVICES ─────────────────────────────────── -->
   <section class="s s--lt" id="services">
-    <span class="s__eye">02 — Services</span>
     <div class="svc__top reveal">
       <h2 class="s__h2">One system. Four aspects. Built to <em>compound.</em></h2>
       <p class="svc__intro">Strategy sets the direction. Branding builds the trust. The website converts it. Ads scale it. Run separately, each piece is a cost. Run together, they're a growth engine.</p>
@@ -1196,7 +1125,6 @@
 
   <!-- ── PROCESS ──────────────────────────────────── -->
   <section class="s s--dk" id="process">
-    <span class="s__eye">03 — Process</span>
     <h2 class="s__h2 reveal" style="color:var(--paper); margin-bottom:56px;">How an engagement <em>runs.</em></h2>
     <div class="proc__grid reveal">
 
@@ -1230,7 +1158,6 @@
 
   <!-- ── TEAM ─────────────────────────────────────── -->
   <section class="s s--st" id="team">
-    <span class="s__eye">04 — Meet the team</span>
     <div class="team__top reveal">
       <h2 class="s__h2">The people behind the <em>team.</em></h2>
     </div>
@@ -1282,12 +1209,6 @@
 
   <!-- ── PORTFOLIO CTA ────────────────────────────── -->
   <section class="s s--st">
-    <div class="cli__head reveal">
-      <span class="s__eye" style="color:var(--ink);">05 — Portfolio</span>
-      <h2 class="s__h2" style="color:var(--ink);">
-        The system, <em>in practice.</em>
-      </h2>
-    </div>
     <div class="svc__foot reveal">
       <a href="portfolio.html" class="btn btn--outline-dk">Check our portfolio <span>→</span></a>
     </div>
@@ -1296,7 +1217,6 @@
 
   <!-- ── FAQ ──────────────────────────────────────── -->
   <section class="s s--lt s--faq">
-    <span class="s__eye">06 — FAQ</span>
     <h2 class="s__h2" style="margin-bottom:48px;">Questions, <em>answered.</em></h2>
     <div class="faq__list reveal">
       <details class="faq__item">
@@ -1386,13 +1306,9 @@
 
   <!-- ── CTA ──────────────────────────────────────── -->
   <section class="cta" id="contact">
-    <span class="cta__eye">Open to collaborations</span>
     <h2 class="cta__h2 reveal">
       Ready to build the<br><em>system,</em> not just the look?
     </h2>
-    <p class="cta__sub reveal">
-      One call to see if there's a fit — no pitch deck, no pressure.
-    </p>
     <div class="cta__btns reveal">
       <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--solid-lt">Book a Strategy Call <span>→</span></a>
       <a href="portfolio.html" class="btn btn--ghost-lt">View our work <span>→</span></a>
@@ -1478,7 +1394,6 @@
     }
 
     svcCircles.forEach(circle => {
-      circle.addEventListener('mouseenter', () => openSvcPanel(circle));
       circle.addEventListener('click', () => openSvcPanel(circle));
     });
     document.getElementById('svcOverlayClose').addEventListener('click', closeSvcPanel);
