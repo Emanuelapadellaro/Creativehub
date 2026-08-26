@@ -236,7 +236,7 @@
       max-width: 480px;
       font-family: var(--sans);
       font-weight: 300;
-      font-size: 19px;
+      font-size: 16px;
       line-height: 1.8;
       color: var(--ink);
     }
@@ -343,7 +343,7 @@
     }
 
     .hero-intro__text {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 1.8;
       color: var(--ink);
@@ -419,12 +419,15 @@
       border-right: 1px solid rgba(244,243,239,.1);
     }
     .philo__body {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 1.82;
       color: var(--paper);
-      padding-left: 64px;
-      padding-top: 4px;
+      text-align: center;
+      align-self: center;
+      max-width: 420px;
+      padding: 0 24px 0 64px;
+      margin: 0 auto;
     }
 
     /* ── SERVICES ──────────────────────────────────── */
@@ -437,7 +440,7 @@
       margin: 0 auto 64px;
     }
     .svc__intro {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 1.78;
       color: var(--ink);
@@ -457,7 +460,7 @@
       height: calc(var(--r) * 2);
       border-radius: 50%;
       border: 1px solid var(--ink);
-      background: transparent;
+      background: var(--ink);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -465,7 +468,7 @@
       cursor: pointer;
       touch-action: manipulation;
       font-family: var(--sans);
-      color: var(--ink);
+      color: var(--paper);
       transition: background .45s var(--ease), color .45s var(--ease), transform .45s var(--ease);
     }
     .svc__circle::after {
@@ -482,25 +485,25 @@
       transform-origin: 3.5px calc(var(--r) + 3.5px);
       animation: svcOrbit 9s linear infinite;
       pointer-events: none;
-      opacity: .85;
+      opacity: 0;
       transition: opacity .4s var(--ease);
     }
     .svc__circle:hover::after,
     .svc__circle.is-active::after {
-      opacity: 0;
+      opacity: .85;
     }
     @keyframes svcOrbit {
       to { transform: rotate(360deg); }
     }
     .svc__circle:hover,
     .svc__circle.is-active {
-      background: var(--ink);
-      color: var(--paper);
+      background: transparent;
+      color: var(--ink);
       transform: scale(1.05);
     }
     .svc__circle:hover .svc__circle-cta,
     .svc__circle.is-active .svc__circle-cta {
-      color: var(--paper);
+      color: var(--ink);
     }
     .svc__circle-name {
       font-family: var(--serif);
@@ -522,7 +525,7 @@
       font-weight: 600;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: var(--ink);
+      color: var(--paper);
       white-space: nowrap;
       pointer-events: none;
     }
@@ -637,7 +640,7 @@
       margin-bottom: 14px;
     }
     .proc__desc {
-      font-size: 17px;
+      font-size: 15px;
       font-weight: 300;
       line-height: 1.75;
       color: rgba(244,243,239,.75);
@@ -709,7 +712,7 @@
       margin-bottom: 14px;
     }
     .tc__bio {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 1.8;
       color: var(--ink);
@@ -742,7 +745,7 @@
     }
     .faq__item summary::-webkit-details-marker { display: none; }
     .faq__q {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 400;
     }
     .faq__icon {
@@ -754,7 +757,7 @@
     }
     .faq__item[open] .faq__icon { transform: rotate(45deg); }
     .faq__a {
-      font-size: 19px;
+      font-size: 16px;
       font-weight: 300;
       line-height: 1.8;
       color: var(--ink);
@@ -1061,7 +1064,7 @@
   <!-- ── SERVICES ─────────────────────────────────── -->
   <section class="s s--lt" id="services">
     <div class="svc__top reveal">
-      <h2 class="s__h2">One system. Four aspects. Built to <em>compound.</em></h2>
+      <h2 class="s__h2">One system. Four aspects.<br>Built to <em>compound.</em></h2>
       <p class="svc__intro">Strategy sets the direction. Branding builds the trust. The website converts it. Ads scale it. Run separately, each piece is a cost. Run together, they're a growth engine.</p>
     </div>
     <div class="svc__circles reveal">
@@ -1118,7 +1121,7 @@
     </div>
 
     <div class="svc__foot reveal">
-      <a href="#process" class="btn btn--outline-dk">See how the system works together <span>→</span></a>
+      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--outline-dk">Book a call with us <span>→</span></a>
     </div>
   </section>
 
