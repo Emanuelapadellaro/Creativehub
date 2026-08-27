@@ -575,7 +575,9 @@
     .svc__overlay-close:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
     .svc__overlay-inner {
       max-width: min(1040px, 90vw);
-      padding: 0 clamp(24px, 5vw, 64px);
+      max-height: 100%;
+      overflow-y: auto;
+      padding: 56px clamp(24px, 5vw, 64px) 40px;
       text-align: center;
       opacity: 0;
       transform: translateY(16px);
@@ -604,6 +606,7 @@
       line-height: 1.75;
       color: var(--paper);
       opacity: .88;
+      white-space: pre-line;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -911,7 +914,7 @@
       .svc__circle-name { font-size: clamp(30px, 8vw, 38px); }
       .svc__circle-cta { font-size: 12px; bottom: clamp(24px, 6vw, 32px); }
       .svc__overlay { inset: 0; border-radius: 0; }
-      .svc__overlay-inner { padding: 0 28px; }
+      .svc__overlay-inner { padding: 64px 28px 40px; }
       .svc__overlay-name { font-size: 28px; }
       .svc__overlay-text { font-size: 14px; }
 
@@ -1095,7 +1098,19 @@
         <template>
           <span data-num>03</span>
           <span data-name>Website</span>
-          <span data-text>Your website is your storefront. If you think you can do business without one, you're trying to save money that will cost you later in credibility. Why? Because people want to see that you take your business seriously enough to present yourself in a beautiful, cohesive way — one that tells your story, shows your expertise, and positions you as the expert. Someone asks if you have a website, and you send them a site built in Wix in 2015, or just your Instagram link? Most likely, they won't contact you back — because you're losing credibility.</span>
+          <span data-text>Your website is more than a digital storefront. It is one of the clearest expressions of your business and, when done well, an extension of you.
+
+At times you can run a business without one. But if you are trying to save money by avoiding your website, you may be saving in the wrong place. Because when someone is considering working with you, they are not only looking at what you offer. They are looking at how you present it.
+
+A great website gives people a sense of who you are before they ever speak to you. It tells your story, communicates your expertise, creates a sense of trust, and positions you at the level you want to be perceived.
+
+And when your website actually feels like you, something shifts. It becomes more than a place to list your services. It becomes a digital experience of your brand.
+
+So when someone asks for your website and you send them a Wix template, or simply your Instagram profile, you are leaving a lot of your credibility to chance.
+
+Your website should make people think: I want to know more about this person.
+
+Not: Are they still in business?</span>
         </template>
       </button>
 
