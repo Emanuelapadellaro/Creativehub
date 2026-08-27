@@ -534,6 +534,20 @@
       margin-top: 56px;
     }
 
+    .port-cta {
+      position: relative;
+      min-height: 62vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--paper);
+      background-image: linear-gradient(rgba(11,11,9,.5), rgba(11,11,9,.5)), url('img/portfolio-cta-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
     .svc__overlay {
       position: fixed;
       inset: clamp(10px, 3vw, 32px);
@@ -908,6 +922,9 @@
       /* philosophy */
       .philo__quote { font-size: clamp(18px, 5vw, 30px); }
 
+      /* portfolio cta */
+      .port-cta { background-attachment: scroll; min-height: 46vh; }
+
       /* services */
       .svc__circles { flex-direction: column; align-items: center; gap: 36px; }
       .svc__circle { --r: clamp(115px, 34vw, 150px); }
@@ -1226,9 +1243,9 @@ Not: Are they still in business?</span>
 
 
   <!-- ── PORTFOLIO CTA ────────────────────────────── -->
-  <section class="s s--st">
-    <div class="svc__foot reveal">
-      <a href="portfolio.html" class="btn btn--outline-dk">Check our portfolio <span>→</span></a>
+  <section class="s port-cta">
+    <div class="svc__foot reveal" style="margin-top:0;">
+      <a href="portfolio.html" class="btn btn--ghost-lt">Check our portfolio <span>→</span></a>
     </div>
   </section>
 
