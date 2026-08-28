@@ -466,6 +466,8 @@
     /* images — fully visible, no forced crop */
     .proj__img-full { width: 100%; margin-bottom: 16px; }
     .proj__img-full img, .proj__img-full video { width: 100%; height: auto; display: block; }
+    .proj__img-full--zoom { overflow: hidden; }
+    .proj__img-full--zoom video { transform: scale(1.025); transform-origin: center; }
 
     .proj__2col {
       display: grid;
@@ -931,7 +933,7 @@
       <p class="proj__story-line">Charlie is an incredibly talented filmmaker and photographer, and the goal was to create a simple, minimalist website that gives plenty of space to his work and art — clearly reflecting the services he's leaning towards and showcasing his incredible portfolio.</p>
     </div>
 
-    <div class="proj__img-full proj__gap reveal" style="margin-top:64px;">
+    <div class="proj__img-full proj__gap reveal proj__img-full--zoom" style="margin-top:64px;">
       <video autoplay muted loop playsinline>
         <source src="img/raised-by-volcanoes.mp4" type="video/mp4">
       </video>
