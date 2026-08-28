@@ -227,6 +227,20 @@
     }
     .btn--outline-dk:hover { border-color: var(--ink); }
 
+    /* ── PORTFOLIO INTRO LOADER ─────────────────────── */
+    .port-loader {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      padding: 0 var(--gx);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .port-loader { display: none; }
+    }
+
     /* ── PORTFOLIO HERO ────────────────────────────── */
     .port-hero {
       min-height: 100svh;
@@ -734,6 +748,33 @@
 </head>
 <body>
 
+  <!-- ── PORTFOLIO INTRO LOADER ─────────────────────── -->
+  <div class="port-loader" id="portLoader" aria-hidden="true">
+    <h1 class="port-hero__h1">
+      <span class="port-hero__word" style="--d:0">A</span>
+      <span class="port-hero__word" style="--d:1">look</span>
+      <span class="port-hero__word" style="--d:2">into</span>
+      <span class="port-hero__word" style="--d:3">our</span>
+      <span class="port-hero__word" style="--d:4">creative</span>
+      <span class="port-hero__word" style="--d:5"><em>world.</em></span>
+    </h1>
+  </div>
+  <script>
+    (function () {
+      var loader = document.getElementById('portLoader');
+      if (!loader) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        loader.style.display = 'none';
+        return;
+      }
+      document.documentElement.style.overflow = 'hidden';
+      setTimeout(function () {
+        loader.style.display = 'none';
+        document.documentElement.style.overflow = '';
+      }, 4800);
+    })();
+  </script>
+
   <div class="cursor-dot" aria-hidden="true"></div>
 
   <!-- ── NAVIGATION ───────────────────────────────── -->
@@ -768,7 +809,7 @@
       <span class="port-hero__word" style="--d:0">A</span>
       <span class="port-hero__word" style="--d:1">look</span>
       <span class="port-hero__word" style="--d:2">into</span>
-      <span class="port-hero__word" style="--d:3">our</span><br>
+      <span class="port-hero__word" style="--d:3">our</span>
       <span class="port-hero__word" style="--d:4">creative</span>
       <span class="port-hero__word" style="--d:5"><em>world.</em></span>
     </h1>
