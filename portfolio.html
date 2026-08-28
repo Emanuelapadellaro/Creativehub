@@ -234,26 +234,26 @@
       color: var(--paper);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       padding: var(--nav-h) var(--gx) 0;
     }
 
     .port-hero__h1 {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-weight: 300;
-      font-size: clamp(32px, 5.5vw, 80px);
-      line-height: 1.18;
+      font-size: clamp(18px, 2.2vw, 30px);
+      line-height: 1.2;
       letter-spacing: -.01em;
       color: var(--paper);
-      text-align: center;
+      text-align: left;
     }
     .port-hero__h1 em { font-style: italic; }
 
     .port-hero__word {
       display: inline-block;
       opacity: 0;
-      transform: translateY(18px);
-      animation: port-hero-word-rise .7s cubic-bezier(.22,1,.36,1) calc(.2s + var(--d) * .45s) forwards;
+      transform: translateY(22px);
+      animation: port-hero-word-rise 1s cubic-bezier(.22,1,.36,1) calc(.3s + var(--d) * .65s) forwards;
     }
     @keyframes port-hero-word-rise {
       to { opacity: 1; transform: translateY(0); }
@@ -689,7 +689,7 @@
       .nav__logo img { width: 36px; height: 36px; }
 
       /* portfolio hero */
-      .port-hero__h1 { font-size: clamp(26px, 9vw, 40px); }
+      .port-hero__h1 { font-size: clamp(16px, 5vw, 22px); }
 
       /* project index */
       .proj-index { grid-template-columns: 1fr 1fr; }
