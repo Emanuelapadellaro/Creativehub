@@ -197,11 +197,13 @@
       top: var(--nav-h);
       left: 0;
       right: 0;
+      bottom: 0;
       z-index: 99;
       background: var(--ink);
       border-bottom: 1px solid rgba(244,243,239,.12);
       display: flex;
       flex-direction: column;
+      overflow-y: auto;
       padding: 4px var(--gx) 20px;
       transform: translateY(-10px);
       opacity: 0;
@@ -572,6 +574,7 @@
       position: absolute;
       top: clamp(18px, 3vw, 40px);
       right: clamp(18px, 4vw, 48px);
+      z-index: 2;
       width: 44px;
       height: 44px;
       border: 1px solid rgba(244,243,239,.4);
@@ -934,7 +937,7 @@
       .svc__circles { flex-direction: column; align-items: center; gap: 36px; }
       .svc__circle { --r: clamp(115px, 34vw, 150px); }
       .svc__circle-name { font-size: clamp(30px, 8vw, 38px); }
-      .svc__circle-cta { font-size: 12px; bottom: clamp(24px, 6vw, 32px); }
+      .svc__circle-cta { font-size: 12px; bottom: clamp(46px, 13vw, 60px); }
       .svc__overlay { inset: 0; border-radius: 0; }
       .svc__overlay-inner { padding: 64px 28px 40px; }
       .svc__overlay-name { font-size: 28px; }
@@ -951,12 +954,14 @@
         padding-top: 32px;
         padding-bottom: 32px;
         border-top: 1px solid rgba(244,243,239,.12);
+        text-align: center;
       }
       .proc__item:last-child { border-bottom: 1px solid rgba(244,243,239,.12) !important; }
 
       /* team */
       .team__grid { grid-template-columns: 1fr; gap: 40px; }
       .tc-card__img { aspect-ratio: 3/4; }
+      .tc-card { align-items: center; text-align: center; }
 
       /* case studies */
       .cli__head { text-align: left; }
@@ -970,7 +975,7 @@
       .cta__btns { flex-direction: column; align-items: center; }
 
       /* footer */
-      footer { flex-direction: column; align-items: flex-start; gap: 18px; }
+      footer { flex-direction: column; align-items: center; gap: 18px; }
       .ft__links { gap: 18px; flex-wrap: wrap; }
     }
 

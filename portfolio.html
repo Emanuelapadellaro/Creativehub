@@ -167,11 +167,13 @@
       top: var(--nav-h);
       left: 0;
       right: 0;
+      bottom: 0;
       z-index: 99;
       background: var(--ink);
       border-bottom: 1px solid rgba(244,243,239,.08);
       display: flex;
       flex-direction: column;
+      overflow-y: auto;
       padding: 4px var(--gx) 20px;
       transform: translateY(-10px);
       opacity: 0;
@@ -774,11 +776,14 @@
       /* 2-col → 1-col (including inline-style overrides) */
       .proj__2col { grid-template-columns: 1fr !important; }
       .proj__2col--equal img { height: auto !important; max-height: none; }
+      .proj__gap--tight-mobile { margin-bottom: 16px; }
 
       /* moonshift split */
       .proj__split-img img { height: 64vw; min-height: 220px; }
       .proj__split-text { padding: 32px var(--gx); }
       .proj__split-text .proj__title { font-size: clamp(18px, 5.5vw, 32px) !important; }
+      .proj__split-text .proj__title,
+      .proj__split-text .proj__subtitle { text-align: center; }
 
       /* coyote detail list */
       .proj__detail-item { grid-template-columns: 90px 1fr; gap: 12px; }
@@ -794,7 +799,7 @@
       .cta__btns { flex-direction: column; align-items: center; }
 
       /* footer */
-      footer { flex-direction: column; align-items: flex-start; gap: 18px; }
+      footer { flex-direction: column; align-items: center; gap: 18px; }
       .ft__links { gap: 18px; flex-wrap: wrap; }
     }
 
@@ -976,7 +981,7 @@
       <img src="img/olivo-a.jpg" alt="Olivo — brand identity title slide" loading="lazy" decoding="async">
       <img src="img/olivo-b.jpg" alt="Olivo — visual world: natural, human, functional" loading="lazy" decoding="async">
     </div>
-    <div class="proj__2col proj__gap reveal">
+    <div class="proj__2col proj__gap proj__gap--tight-mobile reveal">
       <img src="img/olivo-3.jpg" alt="Olivo — materials and textures moodboard" loading="lazy" decoding="async">
       <img src="img/olivo-4.jpg" alt="Olivo — colour palette and typography" loading="lazy" decoding="async">
     </div>
@@ -1021,7 +1026,7 @@
       </div>
     </div>
 
-    <div class="proj__2col proj__gap reveal">
+    <div class="proj__2col proj__gap proj__gap--tight-mobile reveal">
       <img src="img/moonshift-3.jpg" alt="The Moonshift — label design" loading="lazy" decoding="async">
       <img src="img/moonshift-4.jpg" alt="The Moonshift — brand materials" loading="lazy" decoding="async">
     </div>
