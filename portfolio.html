@@ -253,11 +253,11 @@
     }
 
     .port-hero__h1 {
-      font-family: var(--serif);
+      max-width: 480px;
+      font-family: var(--sans);
       font-weight: 300;
-      font-size: clamp(18px, 2.2vw, 30px);
-      line-height: 1.2;
-      letter-spacing: -.01em;
+      font-size: 16px;
+      line-height: 1.8;
       color: var(--paper);
       text-align: left;
     }
@@ -266,8 +266,8 @@
     .port-hero__word {
       display: inline-block;
       opacity: 0;
-      transform: translateY(22px);
-      animation: port-hero-word-rise 1s cubic-bezier(.22,1,.36,1) calc(.3s + var(--d) * .65s) forwards;
+      transform: translateY(12px);
+      animation: port-hero-word-rise .5s cubic-bezier(.22,1,.36,1) calc(.15s + var(--d) * .4s) forwards;
     }
     @keyframes port-hero-word-rise {
       to { opacity: 1; transform: translateY(0); }
@@ -702,9 +702,6 @@
       .nav__burger { display: flex; }
       .nav__logo img { width: 36px; height: 36px; }
 
-      /* portfolio hero */
-      .port-hero__h1 { font-size: clamp(16px, 5vw, 22px); }
-
       /* project index */
       .proj-index { grid-template-columns: 1fr 1fr; }
       .proj-index__item { padding: 14px 16px; }
@@ -771,7 +768,7 @@
       setTimeout(function () {
         loader.style.display = 'none';
         document.documentElement.style.overflow = '';
-      }, 4800);
+      }, 2900);
     })();
   </script>
 
