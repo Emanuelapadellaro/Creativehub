@@ -232,57 +232,34 @@
       min-height: 100svh;
       background: var(--ink);
       color: var(--paper);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding-top: var(--nav-h);
-    }
-
-    .port-hero__left {
       display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 72px var(--gx) var(--gy);
-    }
-
-    .port-hero__eye {
-      font-family: var(--sans);
-      font-size: 9px;
-      font-weight: 400;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--paper);
-      margin-bottom: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: var(--nav-h) var(--gx) 0;
     }
 
     .port-hero__h1 {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: clamp(34px, 4.5vw, 64px);
-      line-height: 1.08;
+      font-size: clamp(32px, 5.5vw, 80px);
+      line-height: 1.18;
+      letter-spacing: -.01em;
       color: var(--paper);
-      margin-bottom: 32px;
+      text-align: center;
     }
     .port-hero__h1 em { font-style: italic; }
 
-    .port-hero__body {
-      font-size: 16px;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--paper);
-      max-width: 400px;
-      margin-bottom: 44px;
+    .port-hero__word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: port-hero-word-rise .7s cubic-bezier(.22,1,.36,1) calc(.2s + var(--d) * .45s) forwards;
     }
-
-    .port-hero__right {
-      position: relative;
-      overflow: hidden;
+    @keyframes port-hero-word-rise {
+      to { opacity: 1; transform: translateY(0); }
     }
-    .port-hero__right img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
+    @media (prefers-reduced-motion: reduce) {
+      .port-hero__word { opacity: 1; transform: none; animation: none; }
     }
 
     /* ── PROJECT INDEX ─────────────────────────────── */
@@ -649,11 +626,6 @@
        RESPONSIVE — TABLET  ≤ 900px
     ═════════════════════════════════════════════════ */
     @media (max-width: 900px) {
-      /* hero — stack */
-      .port-hero { grid-template-columns: 1fr; }
-      .port-hero__right { height: 55vw; min-height: 260px; }
-      .port-hero__left  { padding-top: 40px; padding-bottom: 52px; }
-
       /* project index — 2 col */
       .proj-index { grid-template-columns: 1fr 1fr; }
       .proj-index__item:nth-child(even) { border-right: none; }
@@ -699,10 +671,7 @@
       .nav__logo img { width: 36px; height: 36px; }
 
       /* portfolio hero */
-      .port-hero__left  { padding: 32px var(--gx) 40px; }
-      .port-hero__right { height: 72vw; }
-      .port-hero__eye   { display: none; }
-      .port-hero__h1    { font-size: clamp(28px, 8vw, 48px); }
+      .port-hero__h1 { font-size: clamp(26px, 9vw, 40px); }
 
       /* project index */
       .proj-index { grid-template-columns: 1fr 1fr; }
@@ -777,20 +746,14 @@
 
   <!-- ── PORTFOLIO HERO ────────────────────────────── -->
   <section class="port-hero">
-    <div class="port-hero__left">
-      <h1 class="port-hero__h1">A look into our<br>creative <em>world.</em></h1>
-      <p class="port-hero__body">
-        Every project we take on is approached with intention and care. Below is a curated selection of case studies, branding projects, visual content, and work developed both individually and collaboratively as a team.
-        <br><br>
-        This space is constantly evolving — we update it with new projects, ideas, and collaborations.
-      </p>
-      <a href="https://calendly.com/emanuelacreativehub/30min" target="_blank" rel="noopener" class="btn btn--ghost-lt" style="width:fit-content">
-        Book a discovery call <span>→</span>
-      </a>
-    </div>
-    <div class="port-hero__right">
-      <img src="img/portfolio-hero.jpg" alt="The Creative Hub" loading="eager" fetchpriority="high" decoding="async">
-    </div>
+    <h1 class="port-hero__h1">
+      <span class="port-hero__word" style="--d:0">A</span>
+      <span class="port-hero__word" style="--d:1">look</span>
+      <span class="port-hero__word" style="--d:2">into</span>
+      <span class="port-hero__word" style="--d:3">our</span><br>
+      <span class="port-hero__word" style="--d:4">creative</span>
+      <span class="port-hero__word" style="--d:5"><em>world.</em></span>
+    </h1>
   </section>
 
 
