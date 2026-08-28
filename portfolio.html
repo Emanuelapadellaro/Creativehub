@@ -243,13 +243,48 @@
 
     /* ── PORTFOLIO HERO ────────────────────────────── */
     .port-hero {
-      min-height: 100svh;
+      position: relative;
+      height: 100svh;
+      min-height: 560px;
       background: var(--ink);
-      color: var(--paper);
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: var(--nav-h) var(--gx) 0;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: var(--nav-h);
+    }
+
+    .port-hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .port-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        rgba(11,11,9,.52) 0%,
+        rgba(11,11,9,.62) 50%,
+        rgba(11,11,9,.55) 100%);
+    }
+
+    .port-hero__content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 var(--gx);
+    }
+
+    .port-hero__tagline {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(18px, 2.2vw, 30px);
+      line-height: 1.2;
+      letter-spacing: -.01em;
+      color: var(--paper);
     }
 
     .port-hero__h1 {
@@ -702,6 +737,9 @@
       .nav__burger { display: flex; }
       .nav__logo img { width: 36px; height: 36px; }
 
+      /* portfolio hero */
+      .port-hero__tagline { font-size: clamp(16px, 5vw, 22px); }
+
       /* project index */
       .proj-index { grid-template-columns: 1fr 1fr; }
       .proj-index__item { padding: 14px 16px; }
@@ -802,14 +840,13 @@
 
   <!-- ── PORTFOLIO HERO ────────────────────────────── -->
   <section class="port-hero">
-    <h1 class="port-hero__h1">
-      <span class="port-hero__word" style="--d:0">A</span>
-      <span class="port-hero__word" style="--d:1">look</span>
-      <span class="port-hero__word" style="--d:2">into</span>
-      <span class="port-hero__word" style="--d:3">our</span>
-      <span class="port-hero__word" style="--d:4">creative</span>
-      <span class="port-hero__word" style="--d:5"><em>world.</em></span>
-    </h1>
+    <video class="port-hero__bg" autoplay muted loop playsinline>
+      <source src="img/portfolio-hero-bg.mp4" type="video/mp4">
+    </video>
+    <div class="port-hero__overlay"></div>
+    <div class="port-hero__content">
+      <p class="port-hero__tagline">Check some of our latest work</p>
+    </div>
   </section>
 
 
