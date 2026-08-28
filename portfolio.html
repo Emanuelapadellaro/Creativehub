@@ -397,7 +397,7 @@
 
     /* images — fully visible, no forced crop */
     .proj__img-full { width: 100%; margin-bottom: 16px; }
-    .proj__img-full img { width: 100%; height: auto; display: block; }
+    .proj__img-full img, .proj__img-full video { width: 100%; height: auto; display: block; }
 
     .proj__2col {
       display: grid;
@@ -789,41 +789,77 @@
 
   <!-- ── PROJECT INDEX ─────────────────────────────── -->
   <div class="proj-index">
-    <a class="proj-index__item" href="#olivo">
+    <a class="proj-index__item" href="#volcanoes">
       <span class="proj-index__num">01</span>
+      <span class="proj-index__name">Raised by Volcanoes</span>
+    </a>
+    <a class="proj-index__item" href="#olivo">
+      <span class="proj-index__num">02</span>
       <span class="proj-index__name">Olivo</span>
     </a>
     <a class="proj-index__item" href="#jls">
-      <span class="proj-index__num">02</span>
+      <span class="proj-index__num">03</span>
       <span class="proj-index__name">JLS Video Agency</span>
     </a>
     <a class="proj-index__item" href="#moonshift">
-      <span class="proj-index__num">03</span>
+      <span class="proj-index__num">04</span>
       <span class="proj-index__name">The Moonshift</span>
     </a>
     <a class="proj-index__item" href="#bacab">
-      <span class="proj-index__num">04</span>
+      <span class="proj-index__num">05</span>
       <span class="proj-index__name">Bacab Magazine</span>
     </a>
     <a class="proj-index__item" href="#coyote">
-      <span class="proj-index__num">05</span>
-      <span class="proj-index__name">Conexión Coyote</span>
-    </a>
-    <a class="proj-index__item" href="#galanta">
       <span class="proj-index__num">06</span>
-      <span class="proj-index__name">Galanta</span>
+      <span class="proj-index__name">Conexión Coyote</span>
     </a>
   </div>
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 01 — OLIVO
+       PROJECT 01 — RAISED BY VOLCANOES
+  ═════════════════════════════════════════════════ -->
+  <article class="proj proj--lt" id="volcanoes">
+
+    <div class="proj__meta reveal">
+      <div class="proj__meta-left">
+        <span class="proj__num">01</span>
+        <div class="proj__tags">
+          <span class="proj__tag">Web Design</span>
+          <span class="proj__tag">Web Development</span>
+        </div>
+      </div>
+      <span class="proj__credit">The Creative Hub</span>
+    </div>
+
+    <div class="proj__title reveal" style="margin-bottom:12px;"><em>Raised by Volcanoes</em></div>
+    <p class="proj__subtitle reveal">A creative director, filmmaker and photographer from Guatemala</p>
+
+    <div class="proj__img-full reveal">
+      <video autoplay muted loop playsinline>
+        <source src="img/raised-by-volcanoes.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:28px;margin-bottom:64px;">
+      <a href="https://www.raisedbyvolcanoes.com/" target="_blank" rel="noopener" class="btn btn--outline-dk" style="width:fit-content;">Take me to their website <span>→</span></a>
+    </div>
+
+    <div class="proj__story reveal">
+      <p class="proj__story-line">Charlie is an incredibly talented filmmaker and photographer, and the goal was to create a simple, minimalist website that gives plenty of space to his work and art — clearly reflecting the services he's leaning towards and showcasing his incredible portfolio.</p>
+    </div>
+
+  </article>
+
+
+  <!-- ════════════════════════════════════════════════
+       PROJECT 02 — OLIVO
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--lt" id="olivo">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">01</span>
+        <span class="proj__num">02</span>
         <div class="proj__tags">
           <span class="proj__tag">Brand Development</span>
           <span class="proj__tag">Brand Design</span>
@@ -885,13 +921,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 02 — JLS VIDEO AGENCY
+       PROJECT 03 — JLS VIDEO AGENCY
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--st" id="jls">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">02</span>
+        <span class="proj__num">03</span>
         <div class="proj__tags">
           <span class="proj__tag">Web Design</span>
           <span class="proj__tag">Web Development</span>
@@ -920,13 +956,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 03 — THE MOONSHIFT
+       PROJECT 04 — THE MOONSHIFT
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--dk" id="moonshift">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">03</span>
+        <span class="proj__num">04</span>
         <div class="proj__tags">
           <span class="proj__tag">Branding</span>
           <span class="proj__tag">Visual Identity</span>
@@ -972,13 +1008,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 04 — BACAB MAGAZINE
+       PROJECT 05 — BACAB MAGAZINE
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--lt" id="bacab">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">04</span>
+        <span class="proj__num">05</span>
         <div class="proj__tags">
           <span class="proj__tag">Editorial Design</span>
           <span class="proj__tag">Graphic Design</span>
@@ -1019,13 +1055,13 @@
 
 
   <!-- ════════════════════════════════════════════════
-       PROJECT 05 — BRAND CONEXIÓN COYOTE
+       PROJECT 06 — BRAND CONEXIÓN COYOTE
   ═════════════════════════════════════════════════ -->
   <article class="proj proj--st" id="coyote">
 
     <div class="proj__meta reveal">
       <div class="proj__meta-left">
-        <span class="proj__num">05</span>
+        <span class="proj__num">06</span>
         <div class="proj__tags">
           <span class="proj__tag">Brand Identity</span>
           <span class="proj__tag">Strategy</span>
@@ -1054,54 +1090,6 @@
     <div class="proj__2col proj__gap reveal" style="align-items:start;">
       <img src="img/coyote-3.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
       <img src="img/coyote-4.jpg" alt="Conexión Coyote — brand presentation" loading="lazy" decoding="async">
-    </div>
-
-  </article>
-
-
-  <!-- ════════════════════════════════════════════════
-       PROJECT 06 — GALANTA
-  ═════════════════════════════════════════════════ -->
-  <article class="proj proj--dk" id="galanta">
-
-    <div class="proj__meta reveal">
-      <div class="proj__meta-left">
-        <span class="proj__num">06</span>
-        <div class="proj__tags">
-          <span class="proj__tag">Visual Identity</span>
-          <span class="proj__tag">Brand Development</span>
-          <span class="proj__tag">Web Design</span>
-        </div>
-      </div>
-      <span class="proj__credit">The Creative Hub</span>
-    </div>
-
-    <div class="proj__text-hero">
-      <div>
-        <div class="proj__title reveal" style="color:var(--paper);margin-bottom:12px;"><em>Galanta</em></div>
-        <p class="proj__subtitle reveal" style="color:var(--paper);margin-bottom:0;">Real Estate · Visual Identity · Brand Development</p>
-      </div>
-      <div>
-        <p class="proj__text-desc reveal" style="color:var(--paper);margin-bottom:0;">
-          Galanta is a real estate company based in Mexico City. The goal was to create an identity that feels both luxurious and modern while inspiring trust.
-        </p>
-      </div>
-    </div>
-
-    <!-- hero — colour palette / moodboard -->
-    <div class="proj__img-full proj__gap reveal">
-      <img src="img/galanta-hero.jpg" alt="Galanta — colour palette and moodboard" loading="lazy" decoding="async">
-    </div>
-
-    <!-- 2-col: brand card UI + laptop mockup -->
-    <div class="proj__2col reveal">
-      <img src="img/galanta-1.jpg" alt="Galanta — brand identity card" loading="lazy" decoding="async">
-      <img src="img/galanta-laptop.jpg" alt="Galanta — website on laptop" loading="lazy" decoding="async">
-    </div>
-
-    <!-- stationery system — full width -->
-    <div class="proj__img-full proj__gap reveal">
-      <img src="img/galanta-3.jpg" alt="Galanta — stationery and brand collateral" loading="lazy" decoding="async">
     </div>
 
   </article>
